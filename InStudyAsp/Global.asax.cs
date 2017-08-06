@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using FluentValidation.Mvc;
 
 namespace InStudyAsp
 {
@@ -13,6 +14,8 @@ namespace InStudyAsp
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            FluentValidationModelValidatorProvider.Configure();
+
         }
     }
 }
