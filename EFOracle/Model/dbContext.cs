@@ -1,14 +1,14 @@
-namespace EFOracle
+namespace EFOracle.Model
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class Context : DbContext
+    public partial class dbContext : DbContext
     {
-        public Context()
-            : base("name=Context")
+        public dbContext()
+            : base("name=dbContext")
         {
         }
 
@@ -22,6 +22,7 @@ namespace EFOracle
         public virtual DbSet<TASKTYPE> TASKTYPES { get; set; }
         public virtual DbSet<TEACHER> TEACHERs { get; set; }
         public virtual DbSet<USER> USERs { get; set; }
+        public virtual DbSet<USER_SESSION> USER_SESSION { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -152,6 +153,10 @@ namespace EFOracle
                 .IsUnicode(false);
 
             modelBuilder.Entity<TASK>()
+                .Property(e => e.TEACHER_ID_FK)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<TASK>()
                 .HasMany(e => e.FAQS)
                 .WithRequired(e => e.TASK)
                 .WillCascadeOnDelete(false);
@@ -193,6 +198,12 @@ namespace EFOracle
                 .WithRequired(e => e.TEACHER)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<TEACHER>()
+                .HasMany(e => e.TASKs)
+                .WithRequired(e => e.TEACHER)
+                .HasForeignKey(e => e.TEACHER_ID_FK)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<USER>()
                 .Property(e => e.USER_PHONE)
                 .IsUnicode(false);
@@ -217,6 +228,20 @@ namespace EFOracle
                 .HasMany(e => e.TEACHERs)
                 .WithRequired(e => e.USER)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<USER>()
+                .HasMany(e => e.USER_SESSION)
+                .WithRequired(e => e.USER)
+                .HasForeignKey(e => e.USER_PHONE_FK)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<USER_SESSION>()
+                .Property(e => e.USER_PHONE_FK)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<USER_SESSION>()
+                .Property(e => e.SESSION_HASH)
+                .IsUnicode(false);
         }
     }
 }

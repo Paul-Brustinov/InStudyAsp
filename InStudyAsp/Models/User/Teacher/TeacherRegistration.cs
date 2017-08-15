@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using EFOracle;
+using EFOracle.Model;
 using FluentValidation;
 using InStudyAsp.Models.User.Teacher;
 
@@ -22,14 +23,15 @@ namespace InStudyAsp.Models.User.Teacher
         public string Email { get; set; }
         public string Phone { get; set; }
         public DateTime Birthday { get; set; }
-        public string Avatar { get; set; }
+        public HttpPostedFileBase Avatar { get; set; }
         public DateTime Start { get; set; }
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
+        public string ActivationCode { get; set; }
 
         public bool PhoneExist()
         {
-            var dbContext = new EFOracle.Context();
+            var dbContext = new EFOracle.Model.dbContext();
             return dbContext.USERs.Find(Phone) != null;
         }
 
@@ -41,11 +43,13 @@ namespace InStudyAsp.Models.User.Teacher
         public void HashPass()
         {
             Password = Hash(Password);
-            ConfirmPassword = Hash(ConfirmPassword);
+            ConfirmPassword = Password;
         }
 
-        public void SaveToDatabase(EFOracle.Context dbContext)
+        public void SaveToDatabase(EFOracle.Model.dbContext dbContext)
         {
+            HashPass();
+
             dbContext.USERs.Add(new USER()
             {
                 USER_PHONE = Phone,
@@ -61,6 +65,14 @@ namespace InStudyAsp.Models.User.Teacher
                 TEACHER_ID = dbContext.TEACHERs.Max(x => x.TEACHER_ID) + 1,
                 USER_PHONE = Phone,
                 TEACHER_START = Start,
+            });
+
+            dbContext.USER_SESSION.Add(new USER_SESSION()
+            {
+                USER_PHONE_FK = Phone,
+                SESSION_DATETIME = DateTime.Now,
+                SESSION_HASH = ActivationCode,
+                SESSION_EXPIRE = DateTime.Now.AddDays(1)
             });
 
             try
@@ -107,7 +119,10 @@ namespace InStudyAsp.Models.User.Teacher
         public DateTime Birthday { get; set; }
 
         [Display(Name = "Avatar")]
-        public string Avatar { get; set; }
+        [Microsoft.Web.Mvc.FileExtensions(Extensions = "jpg",
+             ErrorMessage = "Choose an image")]
+        public HttpPostedFileBase Avatar { get; set; }
+
 
         [Display(Name = "Date of start position")]
         [DataType(DataType.Date)]

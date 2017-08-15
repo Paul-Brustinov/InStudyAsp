@@ -1,4 +1,4 @@
-namespace EFOracle
+namespace EFOracle.Model
 {
     using System;
     using System.Collections.Generic;
@@ -14,6 +14,7 @@ namespace EFOracle
         {
             STUDENTs = new HashSet<STUDENT>();
             TEACHERs = new HashSet<TEACHER>();
+            USER_SESSION = new HashSet<USER_SESSION>();
         }
 
         [Key]
@@ -21,7 +22,7 @@ namespace EFOracle
         public string USER_PHONE { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(256)]
         public string USER_PASSWORD { get; set; }
 
         [Required]
@@ -45,5 +46,8 @@ namespace EFOracle
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TEACHER> TEACHERs { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<USER_SESSION> USER_SESSION { get; set; }
     }
 }

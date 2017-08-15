@@ -11,7 +11,7 @@ namespace InStudyAsp.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var dbContext = new EFOracle.Context();
+            var dbContext = new EFOracle.Model.dbContext();
             var Teachers = dbContext.TEACHERs.ToList();
 
             return View(Teachers);

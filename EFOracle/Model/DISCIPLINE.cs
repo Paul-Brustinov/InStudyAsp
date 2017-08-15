@@ -1,4 +1,4 @@
-namespace EFOracle
+namespace EFOracle.Model
 {
     using System;
     using System.Collections.Generic;
@@ -6,24 +6,27 @@ namespace EFOracle
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("INSTUDY.GROUP")]
-    public partial class GROUP
+    [Table("INSTUDY.DISCIPLINE")]
+    public partial class DISCIPLINE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public GROUP()
+        public DISCIPLINE()
         {
             SCHEDULEs = new HashSet<SCHEDULE>();
-            STUDENTs = new HashSet<STUDENT>();
+            TASKs = new HashSet<TASK>();
         }
 
         [Key]
-        [StringLength(10)]
-        public string GROUP_CODE { get; set; }
+        public decimal DISCIPLINE_CODE { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string DISCIPLINE_NAME { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SCHEDULE> SCHEDULEs { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<STUDENT> STUDENTs { get; set; }
+        public virtual ICollection<TASK> TASKs { get; set; }
     }
 }

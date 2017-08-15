@@ -39,12 +39,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\OracleProgramFiles\client\Paul\product\12.2.0\client_1\odp.net\managed\common\Oracle.ManagedDataAccess.dll</HintPath>
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\OracleProgramFiles\client\Paul\product\12.2.0\client_1\odp.net\managed\common\EF6\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.2.1100\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -59,23 +59,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DISCIPLINE.cs" />
-    <Compile Include="FAQ.cs" />
-    <Compile Include="GROUP.cs" />
-    <Compile Include="Context.cs" />
+    <Compile Include="Model\dbContext.cs" />
+    <Compile Include="Model\DISCIPLINE.cs" />
+    <Compile Include="Model\FAQ.cs" />
+    <Compile Include="Model\GROUP.cs" />
+    <Compile Include="Model\SCHEDULE.cs" />
+    <Compile Include="Model\STUDENT.cs" />
+    <Compile Include="Model\STUDENTWORK.cs" />
+    <Compile Include="Model\TASK.cs" />
+    <Compile Include="Model\TASKTYPE.cs" />
+    <Compile Include="Model\TEACHER.cs" />
+    <Compile Include="Model\USER.cs" />
+    <Compile Include="Model\USER_SESSION.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SCHEDULE.cs" />
-    <Compile Include="STUDENT.cs" />
-    <Compile Include="STUDENTWORK.cs" />
-    <Compile Include="TASK.cs" />
-    <Compile Include="TASKTYPE.cs" />
-    <Compile Include="TEACHER.cs" />
-    <Compile Include="USER.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

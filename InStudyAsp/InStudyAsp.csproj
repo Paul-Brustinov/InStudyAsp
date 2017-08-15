@@ -92,6 +92,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Mvc, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.Futures.5.0.0\lib\net40\Microsoft.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
       <Private>True</Private>
@@ -165,11 +169,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\User\Student\TestStudentController.cs" />
+    <Compile Include="Models\User\Teacher\TeacherLogin.cs" />
     <Compile Include="Controllers\User\Teacher\TeacherRegistrationController.cs" />
     <Compile Include="Controllers\User\Teacher\TestTeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\User\Teacher\VerificationMailSender.cs" />
     <Compile Include="Models\User\Teacher\TeacherRegistration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -190,6 +196,8 @@
     <Content Include="Views\User\Teacher\TestTeacher.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\TeacherRegistration\Registration.cshtml" />
+    <Content Include="Views\TeacherRegistration\Login.cshtml" />
+    <Content Include="Views\TeacherRegistration\VerifyAccount.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
