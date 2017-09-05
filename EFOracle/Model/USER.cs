@@ -6,7 +6,7 @@ namespace EFOracle.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("INSTUDY.USER")]
+    [Table("C##INSTUDY.USER")]
     public partial class USER
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -40,6 +40,8 @@ namespace EFOracle.Model
         public DateTime USER_BIRTHDAY { get; set; }
 
         public byte[] USER_AVATAR { get; set; }
+
+        public decimal? USER_IS_ACTIVATED { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<STUDENT> STUDENTs { get; set; }

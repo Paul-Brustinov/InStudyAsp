@@ -15,6 +15,7 @@
 <body>
 <div>
         @Html.Label(Model.Count().ToString())
+        <div>@HttpContext.Current.User.Identity.Name</div>
 </div>
 </body>
 </html>

@@ -111,29 +111,26 @@ namespace InStudyAsp.Controllers.User.Teacher
         [HttpGet]
         public ActionResult VerifyAccount(string id)
         {
-            bool status = false;
+
+            ViewBag.Status = false;
+            ViewBag.Message = "Invalid Request";
 
             using (EFOracle.Model.dbContext dbContext = new EFOracle.Model.dbContext())
             {
                 dbContext.Configuration.ValidateOnSaveEnabled = false; //to avoid password does not match issue on save changes
 
-                var UserSession = dbContext.USER_SESSION.FirstOrDefault(u => u.SESSION_HASH == id);
-                if (UserSession != null)
-                {
-                    var user = dbContext.USERs.FirstOrDefault(u => u.USER_PHONE == UserSession.USER_PHONE_FK);
-                    //TODO: Findout where IsEmailVerified must be persisted!
-                    //user.IsEmailVerified = true;
-                    //dbContext.SaveChanges();
-                    status = true;
-                }
-                else
-                {
-                    ViewBag.Message = "Invalid Request";
-                }
+                var userSession = dbContext.USER_SESSION.FirstOrDefault(u => u.SESSION_HASH == id);
+                if (userSession == null) return View();
+
+                var user = dbContext.USERs.FirstOrDefault(u => u.USER_PHONE == userSession.USER_PHONE_FK);
+                //TODO: Findout where IsEmailVerified must be persisted!
+                if (user == null) return View();
+
+                user.USER_IS_ACTIVATED = -1;
+                dbContext.SaveChanges();
+                ViewBag.Status = true;
+                ViewBag.Message = "Registration confirmed!";
             }
-
-            ViewBag.Status = status;
-
             return View();
         }
 
@@ -161,7 +158,7 @@ namespace InStudyAsp.Controllers.User.Teacher
 
                     if (string.CompareOrdinal(crPass, user.USER_PASSWORD) == 0)
                     {
-                        int timeout = login.RememberMe ? 525600 : 20; // 525600 == year
+                        int timeout = login.RememberMe ? 525600 : 52560; // 525600 == year 20
                         var ticket = new FormsAuthenticationTicket(login.Phone, login.RememberMe, timeout);
                         string encryped = FormsAuthentication.Encrypt(ticket);
                         var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryped)

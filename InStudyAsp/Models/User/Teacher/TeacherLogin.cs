@@ -14,6 +14,7 @@ namespace InStudyAsp.Models.User.Teacher
         [Display(Name = "Phone")]
         public string Phone { get; set; }
         [Display(Name = "Password")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [Display(Name = "Remember Me")]

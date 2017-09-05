@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Web;
 using EFOracle;
@@ -40,15 +42,11 @@ namespace InStudyAsp.Models.User.Teacher
                 System.Security.Cryptography.SHA256.Create().
                     ComputeHash(Encoding.UTF8.GetBytes(Password)));
 
-        public void HashPass()
-        {
-            Password = Hash(Password);
-            ConfirmPassword = Password;
-        }
 
         public void SaveToDatabase(EFOracle.Model.dbContext dbContext)
         {
-            HashPass();
+            Password = Hash(Password);
+            ConfirmPassword = Password;
 
             dbContext.USERs.Add(new USER()
             {
@@ -60,9 +58,12 @@ namespace InStudyAsp.Models.User.Teacher
                 USER_BIRTHDAY = Birthday,
             });
 
+            decimal index = !dbContext.TEACHERs.Any() ? 0 : dbContext.TEACHERs.Max(x => x.TEACHER_ID);
+
+
             dbContext.TEACHERs.Add(new TEACHER()
             {
-                TEACHER_ID = dbContext.TEACHERs.Max(x => x.TEACHER_ID) + 1,
+                TEACHER_ID = index + 1,
                 USER_PHONE = Phone,
                 TEACHER_START = Start,
             });
@@ -93,10 +94,8 @@ namespace InStudyAsp.Models.User.Teacher
                 }
                 throw;
             }
-        }
-        
-
-    }
+        } //SaveToDataBase
+    } //TeacherRegistration
 
     public class TeacherMetadata
     {
