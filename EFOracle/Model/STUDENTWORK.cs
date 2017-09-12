@@ -6,7 +6,7 @@ namespace EFOracle.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("INSTUDY.STUDENTWORK")]
+    [Table("C##INSTUDY.STUDENTWORK")]
     public partial class STUDENTWORK
     {
         [Key]

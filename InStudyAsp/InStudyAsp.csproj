@@ -96,6 +96,18 @@
       <HintPath>..\packages\Microsoft.AspNet.Mvc.Futures.5.0.0\lib\net40\Microsoft.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
       <Private>True</Private>
@@ -120,6 +132,10 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -167,6 +183,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\User\Student\TestStudentController.cs" />
@@ -179,6 +196,7 @@
     </Compile>
     <Compile Include="Models\User\Teacher\VerificationMailSender.cs" />
     <Compile Include="Models\User\Teacher\TeacherRegistration.cs" />
+    <Compile Include="Models\User\Teacher\ViewModelSchedule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -202,6 +220,10 @@
     <Content Include="Views\TeacherRegistration\Registration.cshtml" />
     <Content Include="Views\TeacherRegistration\Login.cshtml" />
     <Content Include="Views\TeacherRegistration\VerifyAccount.cshtml" />
+    <Content Include="Views\Task\Index.cshtml" />
+    <Content Include="Views\Task\Edit1.cshtml" />
+    <Content Include="Views\Task\Edit2.cshtml" />
+    <Content Include="Views\Task\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -211,16 +233,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\Schedule\" />
-    <Folder Include="Models\Schedule\" />
+    <Folder Include="Controllers\Schedule\Teacher\" />
+    <Folder Include="Models\Extended\" />
     <Folder Include="Models\User\Student\" />
     <Folder Include="Views\Schedule\" />
-    <Folder Include="Views\Task\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EFOracle\EFOracle.csproj">
       <Project>{f9d9c37b-670a-4e6a-9963-4d9534a0f6cd}</Project>
       <Name>EFOracle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repo\Repo.csproj">
+      <Project>{57bac7a0-8951-412d-9403-c0b3b63c0107}</Project>
+      <Name>Repo</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -6,7 +6,7 @@ namespace EFOracle.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("INSTUDY.TASK")]
+    [Table("C##INSTUDY.TASK")]
     public partial class TASK
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

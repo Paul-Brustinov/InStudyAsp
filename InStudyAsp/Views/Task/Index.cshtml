@@ -1,0 +1,52 @@
+﻿@model IEnumerable<EFOracle.Model.SCHEDULE>
+
+<p>
+    @Html.ActionLink("Create New", "Edit")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DISCIPLINE.DISCIPLINE_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GROUP.GROUP_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TEACHER.USER_PHONE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SCHEDULE_ROOM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SCHEDULE_DATE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DISCIPLINE.DISCIPLINE_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GROUP.GROUP_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TEACHER.USER_PHONE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SCHEDULE_ROOM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SCHEDULE_DATE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.TEACHER.TEACHER_ID + "-" + item.GROUP.GROUP_CODE + "-" + item.DISCIPLINE_CODE + "-" + item.SCHEDULE_DATE.Year + "-" + item.SCHEDULE_DATE.Month + "-" + item.SCHEDULE_DATE.Day + "-" + item.SCHEDULE_DATE.Hour + "-" + item.SCHEDULE_DATE.Minute + "-" + item.SCHEDULE_DATE.Second }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
