@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using EFOracle.Model;
 using InStudyAsp.Models.User.Teacher;
+using Newtonsoft.Json;
 using Repo;
 using Repo.Common;
 
@@ -19,7 +21,7 @@ namespace InStudyAsp.Controllers.User.Teacher
         private IGenericRepository<DISCIPLINE> disciplines;
         private TEACHER teacher;
 
-        public TaskController(IGenericRepository<TEACHER> _teachers, IGenericRepository<GROUP> _groups, IGenericRepository<SCHEDULE> _schedules, IGenericRepository<DISCIPLINE> _disciplines)
+        public TaskController(IGenericRepository<TEACHER> _teachers, IGenericRepository<GROUP> _groups, ScheduleRepository _schedules, IGenericRepository<DISCIPLINE> _disciplines)
         {
             teachers = _teachers;
             groups = _groups;
@@ -58,32 +60,40 @@ namespace InStudyAsp.Controllers.User.Teacher
         {
             ViewModelSchedule model = new ViewModelSchedule(Id, schedules, disciplines, groups);
             SCHEDULE schedule = model.Schedule;
-            
+
+            string json = JsonConvert.SerializeObject(schedule, Formatting.Indented);
+
+
             ViewBag.DISCIPLINE_CODE = model.GetDiscipline;
             ViewBag.GROUP_CODE = model.GetGroup;
+            ViewBag.BeforeID = json;
             return View(schedule);
         }
 
         [Authorize]
         [HttpPost]
-        public ActionResult Edit(SCHEDULE _schedule)
+        public ActionResult Edit(ScheduleExtended _schedule)
         {
-            _schedule.TEACHER_ID = teacher.TEACHER_ID;
-
-
             if (!ModelState.IsValid) return RedirectToAction("Edit");
             try
             {
-                schedules.AddOrUpdate(_schedule);
+                _schedule.TEACHER_ID = teacher.TEACHER_ID;
+                SCHEDULE BeforeSchedule = JsonConvert.DeserializeObject<SCHEDULE>(_schedule.OldID); ;
+                SCHEDULE Schedule = _schedule;
+
+                
+                ViewModelSchedule.AddOrUpdate(BeforeSchedule, Schedule, schedules);
                 schedules.Save();
                 //return View("Index", repoGood.GetAll());
                 return RedirectToAction("Index");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 if (e.InnerException?.InnerException != null) ViewBag.Message = e.InnerException.InnerException.Message;
                 return RedirectToAction("Edit");
             }
+
+            return RedirectToAction("Edit");
         }
 
         [HttpGet]

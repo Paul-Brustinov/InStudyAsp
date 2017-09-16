@@ -12,5 +12,6 @@ namespace Repo
     public class ScheduleRepository : GenericRepository<SCHEDULE>
     {
         public ScheduleRepository(DbContext context) : base(context){}
+        
     }
 }

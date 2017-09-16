@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace EFOracle.Model
 {
@@ -28,8 +29,15 @@ namespace EFOracle.Model
         [Display(Name = "Room")]
         public decimal SCHEDULE_ROOM { get; set; }
 
+        [JsonIgnore]
         [Display(Name = "Discipline")]
         public virtual DISCIPLINE DISCIPLINE { get; set; }
+
+        [JsonIgnore]
+        public virtual GROUP GROUP { get; set; }
+
+        [JsonIgnore]
+        public virtual TEACHER TEACHER { get; set; }
 
     }
 }

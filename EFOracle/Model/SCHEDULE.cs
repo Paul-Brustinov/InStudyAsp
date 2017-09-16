@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace EFOracle.Model
 {
     using System;

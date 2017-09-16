@@ -46,6 +46,7 @@ namespace Repo.Common
 
         public virtual void Delete(T entity)
         {
+
             _dbset.Remove(entity);
             //_entities.SaveChanges();
         }

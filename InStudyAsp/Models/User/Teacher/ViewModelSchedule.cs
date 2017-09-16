@@ -56,6 +56,29 @@ namespace InStudyAsp.Models.User.Teacher
             }
         }
 
+        public static SCHEDULE AddOrUpdate(SCHEDULE _oldS, SCHEDULE _newS, IGenericRepository<SCHEDULE> schedules)
+        {
+            SCHEDULE oldS = schedules.FindBy(x => x.TEACHER_ID == _oldS.TEACHER_ID && x.GROUP_CODE == _oldS.GROUP_CODE && x.DISCIPLINE_CODE == _oldS.DISCIPLINE_CODE && x.SCHEDULE_DATE == _oldS.SCHEDULE_DATE).FirstOrDefault();
+            SCHEDULE newS = new SCHEDULE()
+            {
+                TEACHER_ID = _newS.TEACHER_ID,
+                GROUP_CODE = _newS.GROUP_CODE,
+                DISCIPLINE_CODE = _newS.DISCIPLINE_CODE,
+                SCHEDULE_DATE = _newS.SCHEDULE_DATE,
+                SCHEDULE_ROOM = _newS.SCHEDULE_ROOM
+            };
+                
+                schedules.FindBy(x => x.TEACHER_ID == _newS.TEACHER_ID && x.GROUP_CODE == _newS.GROUP_CODE && x.DISCIPLINE_CODE == _newS.DISCIPLINE_CODE && x.SCHEDULE_DATE == _newS.SCHEDULE_DATE).FirstOrDefault();
+
+
+            if (oldS != null)
+            {
+                if (oldS.TEACHER_ID != newS.TEACHER_ID||oldS.GROUP_CODE != newS.GROUP_CODE || oldS.DISCIPLINE_CODE != newS.DISCIPLINE_CODE || oldS.SCHEDULE_DATE != newS.SCHEDULE_DATE) schedules.Delete(oldS);
+            }
+            schedules.AddOrUpdate(newS);
+            return newS;
+        }
+
         private IEnumerable<DISCIPLINE> disciplines
         {
             get
