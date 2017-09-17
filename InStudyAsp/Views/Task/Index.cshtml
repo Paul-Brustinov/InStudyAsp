@@ -23,30 +23,68 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model)
-{
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.DISCIPLINE.DISCIPLINE_NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GROUP.GROUP_CODE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TEACHER.USER_PHONE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SCHEDULE_ROOM)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SCHEDULE_DATE)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.TEACHER.TEACHER_ID + "-" + item.GROUP.GROUP_CODE + "-" + item.DISCIPLINE_CODE + "-" + item.SCHEDULE_DATE.Year + "-" + item.SCHEDULE_DATE.Month + "-" + item.SCHEDULE_DATE.Day + "-" + item.SCHEDULE_DATE.Hour + "-" + item.SCHEDULE_DATE.Minute + "-" + item.SCHEDULE_DATE.Second }) |
-            @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DISCIPLINE.DISCIPLINE_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GROUP.GROUP_CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TEACHER.USER_PHONE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SCHEDULE_ROOM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SCHEDULE_DATE)
+            </td>
+            <td>
+            
+                <button class ="EditButton" onclick="Edit2('@item.TEACHER_ID', '@item.DISCIPLINE_CODE', '@item.GROUP_CODE', '@item.SCHEDULE_DATE')">Edit2</button>
+
+                @Html.ActionLink("Edit", "Edit", new {id = item.TEACHER.TEACHER_ID + "-" + item.GROUP.GROUP_CODE + "-" + item.DISCIPLINE_CODE + "-" + item.SCHEDULE_DATE.Year + "-" + item.SCHEDULE_DATE.Month + "-" + item.SCHEDULE_DATE.Day + "-" + item.SCHEDULE_DATE.Hour + "-" + item.SCHEDULE_DATE.Minute + "-" + item.SCHEDULE_DATE.Second}) |
+                @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
+            </td>
+        </tr>
+    }
 
 </table>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<script>
+    //$(document).ready(function() {
+    //    $(".EditButton").click(function() {
+    //        $.ajax({
+    //            type: "POST",
+    //            url: "Task/Edit",
+    //            data:
+    //        });
+    //    });
+    //});
+
+    function Edit2(TeacherID, DisciplineCode, GroupCode, ScheduleDate) {
+
+        var dataValue = { "TeacherID": TeacherID, "DisciplineCode": DisciplineCode, "GroupCode": GroupCode, "ScheduleDate": ScheduleDate };
+
+        $.post("Edit2",
+            { "TeacherID": TeacherID, "DisciplineCode": DisciplineCode, "GroupCode": GroupCode, "ScheduleDate": ScheduleDate },
+                function (data, status) {
+                    alert("Data: " + data + "\nStatus: " + status);
+            });
+
+        //$.ajax({
+        //    type: "POST",
+        //    url: "Edit2",
+        //    data: dataValue,
+        //    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        //    success: function (result) {}
+        //    });
+    }
+
+</script>

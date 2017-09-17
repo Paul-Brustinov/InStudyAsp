@@ -92,8 +92,54 @@ namespace InStudyAsp.Controllers.User.Teacher
                 if (e.InnerException?.InnerException != null) ViewBag.Message = e.InnerException.InnerException.Message;
                 return RedirectToAction("Edit");
             }
+        }
 
-            return RedirectToAction("Edit");
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult Edit2()
+        {
+            //if (!ModelState.IsValid) return RedirectToAction("Edit");
+            //try
+            //{
+            //    _schedule.TEACHER_ID = teacher.TEACHER_ID;
+            //    SCHEDULE BeforeSchedule = JsonConvert.DeserializeObject<SCHEDULE>(_schedule.OldID); ;
+            //    SCHEDULE Schedule = _schedule;
+
+
+            //    ViewModelSchedule.AddOrUpdate(BeforeSchedule, Schedule, schedules);
+            //    schedules.Save();
+            //    //return View("Index", repoGood.GetAll());
+            //    return RedirectToAction("Index");
+            //}
+            //catch (Exception e)
+            //{
+            //    if (e.InnerException?.InnerException != null) ViewBag.Message = e.InnerException.InnerException.Message;
+            //    return RedirectToAction("Edit");
+            //}
+
+            
+            //SCHEDULE Schedule = JsonConvert.DeserializeObject<SCHEDULE>(s);
+
+            decimal teacherId = 0; decimal.TryParse(Request.Form["TeacherID"], out teacherId);
+            decimal disciplineCode = 0; decimal.TryParse(Request.Form["DisciplineCode"], out disciplineCode);
+            DateTime sDate;
+            DateTime.TryParse(Request.Form["ScheduleDate"], out sDate);
+
+            SCHEDULE schedule = new SCHEDULE() {TEACHER_ID = teacherId, GROUP_CODE = Request.Form["GroupCode"], DISCIPLINE_CODE = disciplineCode, SCHEDULE_DATE = sDate};
+
+            ViewModelSchedule model = new ViewModelSchedule(schedule, schedules, disciplines, groups);
+
+            string json = JsonConvert.SerializeObject(schedule, Formatting.Indented);
+
+
+            ViewBag.DISCIPLINE_CODE = model.GetDiscipline;
+            ViewBag.GROUP_CODE = model.GetGroup;
+            ViewBag.BeforeID = json;
+            return View(schedule);
+
+
+            //return RedirectToAction("Edit2");
         }
 
         [HttpGet]

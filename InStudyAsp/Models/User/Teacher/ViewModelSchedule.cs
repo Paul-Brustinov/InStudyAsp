@@ -14,10 +14,20 @@ namespace InStudyAsp.Models.User.Teacher
         private IGenericRepository<GROUP> repoGroup;
         private IGenericRepository<SCHEDULE> repoSchedule;
         private string id;
+        private SCHEDULE schedule;
 
         public ViewModelSchedule(string _id, IGenericRepository<SCHEDULE> _repoSchedule, IGenericRepository<DISCIPLINE> _repoDiscipline, IGenericRepository<GROUP> _repoGroup)
         {
             id = _id;
+            repoSchedule = _repoSchedule;
+            repoDiscipline = _repoDiscipline;
+            repoGroup = _repoGroup;
+        }
+
+
+        public ViewModelSchedule(SCHEDULE _schedule, IGenericRepository<SCHEDULE> _repoSchedule, IGenericRepository<DISCIPLINE> _repoDiscipline, IGenericRepository<GROUP> _repoGroup)
+        {
+            schedule = _schedule;
             repoSchedule = _repoSchedule;
             repoDiscipline = _repoDiscipline;
             repoGroup = _repoGroup;
@@ -28,6 +38,7 @@ namespace InStudyAsp.Models.User.Teacher
             get
             {
                 if (id == "") return new SCHEDULE();
+                if (schedule != null) return schedule;
 
                 string[] ids = id.Split('-');
 
@@ -41,16 +52,16 @@ namespace InStudyAsp.Models.User.Teacher
                 int min; int.TryParse(ids[7], out min);
                 int sec; int.TryParse(ids[8], out sec);
 
-                var schedule = repoSchedule.FindBy(x => x.TEACHER_ID == teacherId && x.GROUP_CODE == groupCode 
+                schedule = repoSchedule.FindBy(x => x.TEACHER_ID == teacherId && x.GROUP_CODE == groupCode 
                     && x.DISCIPLINE_CODE == disciplineCode
                     && x.SCHEDULE_DATE.Year == year && x.SCHEDULE_DATE.Month == month && x.SCHEDULE_DATE.Day == day
                     && x.SCHEDULE_DATE.Hour == hour && x.SCHEDULE_DATE.Minute == min && x.SCHEDULE_DATE.Second == sec
                  ).FirstOrDefault();
 
-                schedule.DISCIPLINE =
-                    repoDiscipline.FindBy(x => x.DISCIPLINE_CODE == schedule.DISCIPLINE_CODE).FirstOrDefault();
-                schedule.GROUP =
-                    repoGroup.FindBy(x => x.GROUP_CODE == schedule.GROUP_CODE).FirstOrDefault();
+                //schedule.DISCIPLINE =
+                //    repoDiscipline.FindBy(x => x.DISCIPLINE_CODE == schedule.DISCIPLINE_CODE).FirstOrDefault();
+                //schedule.GROUP =
+                //    repoGroup.FindBy(x => x.GROUP_CODE == schedule.GROUP_CODE).FirstOrDefault();
 
                 return schedule;
             }
