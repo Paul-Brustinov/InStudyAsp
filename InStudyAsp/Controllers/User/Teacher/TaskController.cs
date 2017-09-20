@@ -56,10 +56,10 @@ namespace InStudyAsp.Controllers.User.Teacher
 
         [Authorize]
         [HttpGet]
-        public ActionResult Edit(string Id = "")
+        public ActionResult New(string Id = "")
         {
             ViewModelSchedule model = new ViewModelSchedule(Id, schedules, disciplines, groups);
-            SCHEDULE schedule = model.Schedule;
+            SCHEDULE schedule = model;
 
             string json = JsonConvert.SerializeObject(schedule, Formatting.Indented);
 
@@ -67,21 +67,22 @@ namespace InStudyAsp.Controllers.User.Teacher
             ViewBag.DISCIPLINE_CODE = model.GetDiscipline;
             ViewBag.GROUP_CODE = model.GetGroup;
             ViewBag.BeforeID = json;
-            return View(schedule);
+            return View("Edit", model);
         }
 
         [Authorize]
         [HttpPost]
-        public ActionResult Edit(ScheduleExtended _schedule)
+        public ActionResult EditPost(ViewModelSchedule _schedule)
         {
-            if (!ModelState.IsValid) return RedirectToAction("Edit");
+            if (!ModelState.IsValid) return RedirectToAction("EditGet");
             try
             {
                 _schedule.TEACHER_ID = teacher.TEACHER_ID;
                 SCHEDULE BeforeSchedule = JsonConvert.DeserializeObject<SCHEDULE>(_schedule.OldID); ;
                 SCHEDULE Schedule = _schedule;
 
-                
+                _schedule.SCHEDULE_DATE = _schedule.GetDateTime();
+
                 ViewModelSchedule.AddOrUpdate(BeforeSchedule, Schedule, schedules);
                 schedules.Save();
                 //return View("Index", repoGood.GetAll());
@@ -90,63 +91,58 @@ namespace InStudyAsp.Controllers.User.Teacher
             catch (Exception e)
             {
                 if (e.InnerException?.InnerException != null) ViewBag.Message = e.InnerException.InnerException.Message;
-                return RedirectToAction("Edit");
+                return RedirectToAction("EditGet");
             }
         }
 
 
         [Authorize]
         [HttpPost]
-        public ActionResult Edit2()
+        public ActionResult EditGet()
         {
-            //if (!ModelState.IsValid) return RedirectToAction("Edit");
-            //try
-            //{
-            //    _schedule.TEACHER_ID = teacher.TEACHER_ID;
-            //    SCHEDULE BeforeSchedule = JsonConvert.DeserializeObject<SCHEDULE>(_schedule.OldID); ;
-            //    SCHEDULE Schedule = _schedule;
-
-
-            //    ViewModelSchedule.AddOrUpdate(BeforeSchedule, Schedule, schedules);
-            //    schedules.Save();
-            //    //return View("Index", repoGood.GetAll());
-            //    return RedirectToAction("Index");
-            //}
-            //catch (Exception e)
-            //{
-            //    if (e.InnerException?.InnerException != null) ViewBag.Message = e.InnerException.InnerException.Message;
-            //    return RedirectToAction("Edit");
-            //}
-
-            
-            //SCHEDULE Schedule = JsonConvert.DeserializeObject<SCHEDULE>(s);
-
             decimal teacherId = 0; decimal.TryParse(Request.Form["TeacherID"], out teacherId);
             decimal disciplineCode = 0; decimal.TryParse(Request.Form["DisciplineCode"], out disciplineCode);
             DateTime sDate;
             DateTime.TryParse(Request.Form["ScheduleDate"], out sDate);
+            string groupCode = Request.Form["GroupCode"];
 
-            SCHEDULE schedule = new SCHEDULE() {TEACHER_ID = teacherId, GROUP_CODE = Request.Form["GroupCode"], DISCIPLINE_CODE = disciplineCode, SCHEDULE_DATE = sDate};
+            SCHEDULE schedule = schedules.FindBy(
+                x => x.TEACHER_ID == teacherId && 
+                x.GROUP_CODE == groupCode &&
+                x.DISCIPLINE_CODE == disciplineCode &&
+                x.SCHEDULE_DATE == sDate
+                ).FirstOrDefault();
 
             ViewModelSchedule model = new ViewModelSchedule(schedule, schedules, disciplines, groups);
 
             string json = JsonConvert.SerializeObject(schedule, Formatting.Indented);
 
-
             ViewBag.DISCIPLINE_CODE = model.GetDiscipline;
             ViewBag.GROUP_CODE = model.GetGroup;
             ViewBag.BeforeID = json;
-            return View(schedule);
-
-
-            //return RedirectToAction("Edit2");
+            return View("Edit", model);
         }
 
-        [HttpGet]
-        public ActionResult Delete(int id)
+        [Authorize]
+        [HttpPost]
+        public ActionResult Delete()
         {
+            decimal teacherId = 0; decimal.TryParse(Request.Form["TeacherID"], out teacherId);
+            decimal disciplineCode = 0; decimal.TryParse(Request.Form["DisciplineCode"], out disciplineCode);
+            DateTime sDate;
+            DateTime.TryParse(Request.Form["ScheduleDate"], out sDate);
+            string groupCode = Request.Form["GroupCode"];
 
-            schedules.Delete(schedules.Get(id));
+            SCHEDULE schedule = schedules.FindBy(
+                x => x.TEACHER_ID == teacherId &&
+                x.GROUP_CODE == groupCode &&
+                x.DISCIPLINE_CODE == disciplineCode &&
+                x.SCHEDULE_DATE == sDate
+                ).FirstOrDefault();
+
+
+
+            schedules.Delete(schedule);
             schedules.Save();
             return RedirectToAction("Index");
         }

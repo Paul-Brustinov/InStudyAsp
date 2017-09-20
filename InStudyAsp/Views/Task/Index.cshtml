@@ -1,63 +1,60 @@
 ﻿@model IEnumerable<EFOracle.Model.SCHEDULE>
 
-<p>
-    @Html.ActionLink("Create New", "Edit")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.DISCIPLINE.DISCIPLINE_NAME)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GROUP.GROUP_CODE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TEACHER.USER_PHONE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SCHEDULE_ROOM)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SCHEDULE_DATE)
-        </th>
-        <th></th>
-    </tr>
 
-    @foreach (var item in Model)
-    {
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <p>
+        @Html.ActionLink("Create New", "New")
+    </p>
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DISCIPLINE.DISCIPLINE_NAME)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GROUP.GROUP_CODE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TEACHER.USER_PHONE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SCHEDULE_ROOM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SCHEDULE_DATE)
-            </td>
-            <td>
-            
-                <button class ="EditButton" onclick="Edit2('@item.TEACHER_ID', '@item.DISCIPLINE_CODE', '@item.GROUP_CODE', '@item.SCHEDULE_DATE')">Edit2</button>
-
-                @Html.ActionLink("Edit", "Edit", new {id = item.TEACHER.TEACHER_ID + "-" + item.GROUP.GROUP_CODE + "-" + item.DISCIPLINE_CODE + "-" + item.SCHEDULE_DATE.Year + "-" + item.SCHEDULE_DATE.Month + "-" + item.SCHEDULE_DATE.Day + "-" + item.SCHEDULE_DATE.Hour + "-" + item.SCHEDULE_DATE.Minute + "-" + item.SCHEDULE_DATE.Second}) |
-                @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
-                @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.DISCIPLINE.DISCIPLINE_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GROUP.GROUP_CODE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SCHEDULE_ROOM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SCHEDULE_DATE)
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DISCIPLINE.DISCIPLINE_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GROUP.GROUP_CODE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SCHEDULE_ROOM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SCHEDULE_DATE)
+                </td>
+                <td>
 
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/bootstrap.min.js"></script>
 
-<script>
+                    <button type="submit" onclick="EditGet  ('@item.TEACHER_ID', '@item.DISCIPLINE_CODE', '@item.GROUP_CODE', '@item.SCHEDULE_DATE')">Edit</button>
+                    <button type="submit" onclick="DeleteGet('@item.TEACHER_ID', '@item.DISCIPLINE_CODE', '@item.GROUP_CODE', '@item.SCHEDULE_DATE')">Delete</button>
+
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.TEACHER.TEACHER_ID + "-" + item.GROUP.GROUP_CODE + "-" + item.DISCIPLINE_CODE + "-" + item.SCHEDULE_DATE.Year + "-" + item.SCHEDULE_DATE.Month + "-" + item.SCHEDULE_DATE.Day + "-" + item.SCHEDULE_DATE.Hour + "-" + item.SCHEDULE_DATE.Minute + "-" + item.SCHEDULE_DATE.Second }) |*@
+                    @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                    @*@Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})*@
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <script>
     //$(document).ready(function() {
     //    $(".EditButton").click(function() {
     //        $.ajax({
@@ -68,23 +65,148 @@
     //    });
     //});
 
-    function Edit2(TeacherID, DisciplineCode, GroupCode, ScheduleDate) {
+    //function EditGet(TeacherID, DisciplineCode, GroupCode, ScheduleDate) {
 
+    //    var dataValue = { "TeacherID": TeacherID, "DisciplineCode": DisciplineCode, "GroupCode": GroupCode, "ScheduleDate": ScheduleDate };
+
+    //    var form = document.createElement("form");
+    //    form.setAttribute("method", "POST");
+
+    //    form.setAttribute("action", "EditGet"); //Task/ Why this "Task" is doing like a ghost.
+
+    //    var hiddenField;
+
+    //    hiddenField = document.createElement("input"); 
+    //    hiddenField.setAttribute("type", "hidden");
+    //    hiddenField.setAttribute("name", "TeacherID");
+    //    hiddenField.setAttribute("value", TeacherID);
+    //    form.appendChild(hiddenField);
+
+
+    //    hiddenField = document.createElement("input");
+    //    hiddenField.setAttribute("type", "hidden");
+    //    hiddenField.setAttribute("name", "DisciplineCode");
+    //    hiddenField.setAttribute("value", DisciplineCode);
+    //    form.appendChild(hiddenField);
+
+    //    hiddenField = document.createElement("input");
+    //    hiddenField.setAttribute("type", "hidden");
+    //    hiddenField.setAttribute("name", "GroupCode");
+    //    hiddenField.setAttribute("value", GroupCode);
+    //    form.appendChild(hiddenField);
+
+    //    hiddenField = document.createElement("input");
+    //    hiddenField.setAttribute("type", "hidden");
+    //    hiddenField.setAttribute("name", "ScheduleDate");
+    //    hiddenField.setAttribute("value", ScheduleDate);
+    //    form.appendChild(hiddenField);
+
+    //    document.body.appendChild(form);
+    //    form.submit();
+
+
+
+    //    //$.post("Edit2",
+    //    //    { "TeacherID": TeacherID, "DisciplineCode": DisciplineCode, "GroupCode": GroupCode, "ScheduleDate": ScheduleDate },
+    //    //        function (data, status) {
+    //    //            alert("Data: " + data + "\nStatus: " + status);
+    //    //        });
+
+        
+
+    //    //$.ajax({
+    //    //    type: "POST",
+    //    //    url: "Edit2",
+    //    //    data: dataValue,
+    //    //    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    //    //    success: function (result) {}
+    //    //    });
+
+    //}
+
+   function EditGet(TeacherID, DisciplineCode, GroupCode, ScheduleDate) {
+       PostGet(TeacherID, DisciplineCode, GroupCode, ScheduleDate, "EditGet"); //Task/
+   }
+
+   function DeleteGet(TeacherID, DisciplineCode, GroupCode, ScheduleDate) {
+       PostGet(TeacherID, DisciplineCode, GroupCode, ScheduleDate, "Delete"); //Task/
+   }
+
+
+    function PostGet(TeacherID, DisciplineCode, GroupCode, ScheduleDate, Action) {
         var dataValue = { "TeacherID": TeacherID, "DisciplineCode": DisciplineCode, "GroupCode": GroupCode, "ScheduleDate": ScheduleDate };
 
-        $.post("Edit2",
-            { "TeacherID": TeacherID, "DisciplineCode": DisciplineCode, "GroupCode": GroupCode, "ScheduleDate": ScheduleDate },
-                function (data, status) {
-                    alert("Data: " + data + "\nStatus: " + status);
-            });
+        var form = document.createElement("form");
+        form.setAttribute("method", "POST");
 
-        //$.ajax({
-        //    type: "POST",
-        //    url: "Edit2",
-        //    data: dataValue,
-        //    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        //    success: function (result) {}
-        //    });
+
+        form.setAttribute("action", form.baseURI + "\\" + Action); //Task/ Why this "Task" is doing like a ghost.
+
+        var hiddenField;
+
+        hiddenField = document.createElement("input");
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", "TeacherID");
+        hiddenField.setAttribute("value", TeacherID);
+        form.appendChild(hiddenField);
+
+
+        hiddenField = document.createElement("input");
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", "DisciplineCode");
+        hiddenField.setAttribute("value", DisciplineCode);
+        form.appendChild(hiddenField);
+
+        hiddenField = document.createElement("input");
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", "GroupCode");
+        hiddenField.setAttribute("value", GroupCode);
+        form.appendChild(hiddenField);
+
+        hiddenField = document.createElement("input");
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", "ScheduleDate");
+        hiddenField.setAttribute("value", ScheduleDate);
+        form.appendChild(hiddenField);
+
+        document.body.appendChild(form);
+        form.submit();
+
     }
 
-</script>
+
+    //function processForm(TeacherID, DisciplineCode, GroupCode, ScheduleDate) {
+    //    //Retreive the data from the form:
+    //    var data = {
+    //        "TeacherID": TeacherID,
+    //        "DisciplineCode": DisciplineCode,
+    //        "GroupCode": GroupCode,
+    //        "ScheduleDate": ScheduleDate
+    //    };
+
+    //    //Submit the form via Ajax POST request:
+    //    $.ajax({
+    //        type: 'POST',
+    //        url: 'Edit2',
+    //        data: data,
+    //        dataType: 'json'
+    //    }).done(function (data) {
+    //        //The code below is executed asynchronously,
+    //        //meaning that it does not execute until the
+    //        //Ajax request has finished, and the response has been loaded.
+    //        //This code may, and probably will, load *after* any code that
+    //        //that is defined outside of it.
+    //        alert("Thanks for the submission!");
+    //        //console.log("Response Data" + data); //Log the server response to console
+    //    });
+    //    alert("Does this alert appear first or second?");
+    //}
+
+    </script>
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="/Scripts/bootstrap.min.js"></script>

@@ -177,6 +177,9 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Content\jquery.simple-dtpicker.css" />
+    <Content Include="Scripts\jquery.simple-dtpicker.html" />
+    <Content Include="Scripts\jquery.simple-dtpicker.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -192,7 +195,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\User\Student\TestStudentController.cs" />
     <Compile Include="Controllers\User\Teacher\TaskController.cs" />
-    <Compile Include="Models\User\Teacher\ScheduleExtended.cs" />
     <Compile Include="Models\User\Teacher\TeacherLogin.cs" />
     <Compile Include="Controllers\User\Teacher\TeacherRegistrationController.cs" />
     <Compile Include="Controllers\User\Teacher\TestTeacherController.cs" />
@@ -226,7 +228,6 @@
     <Content Include="Views\TeacherRegistration\Login.cshtml" />
     <Content Include="Views\TeacherRegistration\VerifyAccount.cshtml" />
     <Content Include="Views\Task\Index.cshtml" />
-    <Content Include="Views\Task\Edit2.cshtml" />
     <Content Include="Views\Task\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

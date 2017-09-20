@@ -49,24 +49,25 @@ namespace InStudyAsp.Controllers.User.Teacher
 
 
             //TODO: Findout why is this damned teacherRegistration.Avatar null
-            // Файл почему-то не передается
-            //using (MemoryStream memoryStream = new MemoryStream())
-            //{
-            //    teacherRegistration.Avatar.InputStream.CopyTo(memoryStream);
-            //    using (FileStream file = new FileStream("file.bin", FileMode.Create, System.IO.FileAccess.Write))
-            //    {
-            //        byte[] bytes = new byte[memoryStream.Length];
-            //        memoryStream.Read(bytes, 0, (int)memoryStream.Length);
-            //        file.Write(bytes, 0, bytes.Length);
-            //    }
-            //}
+            //Файл почему-то не передается
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                teacherRegistration.Avatar.InputStream.CopyTo(memoryStream);
+                using (FileStream file = new FileStream("d:\\" + teacherRegistration.Phone + ".jpg", FileMode.Create, System.IO.FileAccess.Write))
+                {
+                    byte[] bytes = new byte[memoryStream.Length];
+                    memoryStream.Position = 0;
+                    memoryStream.Read(bytes, 0, (int)memoryStream.Length);
+                    file.Write(bytes, 0, bytes.Length);
+                }
+            }
 
 
             #region Phone is already exists
 
             if (teacherRegistration.PhoneExist())
             {
-                ModelState.AddModelError("PhoneExist", "Phone already exists!");
+                ModelState.AddModelError("Phone", "Phone already exists!");
                 return View(teacherRegistration);
             }
 
@@ -101,12 +102,12 @@ namespace InStudyAsp.Controllers.User.Teacher
 
             #endregion
 
-            return View(teacherRegistration);
+            return RedirectToAction("Login");
         }
 
 
         /*!
-         * Vetify Account 
+         * Verify Account 
         */
         [HttpGet]
         public ActionResult VerifyAccount(string id)
@@ -135,7 +136,10 @@ namespace InStudyAsp.Controllers.User.Teacher
         }
 
 
-        //Login
+        /*!
+        *  Processing Login Get
+        * \return redurect to Action Login
+        */
         [HttpGet]
         public ActionResult Login()
         {
@@ -156,8 +160,10 @@ namespace InStudyAsp.Controllers.User.Teacher
                 {
                     var crPass = Convert.ToBase64String(System.Security.Cryptography.SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(login.Password)));
 
-                    if (string.CompareOrdinal(crPass, user.USER_PASSWORD) == 0)
+                    if (string.CompareOrdinal(crPass, user.USER_PASSWORD) == 0 && user.USER_IS_ACTIVATED == -1)
                     {
+
+
                         int timeout = login.RememberMe ? 525600 : 52560; // 525600 == year 20
                         var ticket = new FormsAuthenticationTicket(login.Phone, login.RememberMe, timeout);
                         string encryped = FormsAuthentication.Encrypt(ticket);
