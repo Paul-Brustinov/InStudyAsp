@@ -16,6 +16,9 @@ using InStudyAsp.Models.User.Teacher;
 namespace InStudyAsp.Models.User.Teacher
 {
 
+    /*************************************************************************************//**
+    * \brief ViewModel for teacherRegistration
+    *****************************************************************************************/
     [FluentValidation.Attributes.Validator(typeof(TeacherValidator))]
     [MetadataType(typeof(TeacherMetadata))]
     public class TeacherRegistration
@@ -37,12 +40,18 @@ namespace InStudyAsp.Models.User.Teacher
             return dbContext.USERs.Find(Phone) != null;
         }
 
+        /*************************************************************************************//**
+        * \brief Hashing password
+        *****************************************************************************************/
         private string Hash(string pass) =>
             Convert.ToBase64String(
                 System.Security.Cryptography.SHA256.Create().
                     ComputeHash(Encoding.UTF8.GetBytes(Password)));
 
 
+        /*************************************************************************************//**
+        * \brief Saving registration data to db
+        *****************************************************************************************/
         public void SaveToDatabase(EFOracle.Model.dbContext dbContext)
         {
             Password = Hash(Password);
@@ -97,6 +106,9 @@ namespace InStudyAsp.Models.User.Teacher
         } //SaveToDataBase
     } //TeacherRegistration
 
+    /*************************************************************************************//**
+    * \brief Methadata for TeacherRegistration
+    *****************************************************************************************/
     public class TeacherMetadata
     {
         [Display(Name = "First name")]
@@ -137,16 +149,17 @@ namespace InStudyAsp.Models.User.Teacher
     }
 }
 
-class TeacherValidator:AbstractValidator<TeacherRegistration>
+/*************************************************************************************//**
+* \brief Teacher registration validator
+*****************************************************************************************/
+class TeacherValidator :AbstractValidator<TeacherRegistration>
 {
     public TeacherValidator()
     {
-
         RuleFor(x => x.Firstname).NotNull().Length(4, 20);
         RuleFor(x => x.Lastname).NotNull().Length(4, 20);
         RuleFor(x => x.Phone).NotNull().Length(10, 20);
         RuleFor(x => x.ConfirmPassword).NotNull().Equal(x => x.Password);
-
     }
 
 }

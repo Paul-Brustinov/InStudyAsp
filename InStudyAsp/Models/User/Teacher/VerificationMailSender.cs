@@ -7,6 +7,9 @@ using System.Web;
 
 namespace InStudyAsp.Models.User.Teacher
 {
+    /*************************************************************************************//**
+    * \brief Mail sender
+    *****************************************************************************************/
     public class VerificationMailSender
     {
         public MailAddress FromEmail { get; set; }
@@ -19,6 +22,9 @@ namespace InStudyAsp.Models.User.Teacher
         public int SmtpPort { get; set; }
 
 
+        /*************************************************************************************//**
+        * \brief Sending mail method
+        *****************************************************************************************/
         public void SendVerificationLinkEmail()
         {
             var smtp = new SmtpClient

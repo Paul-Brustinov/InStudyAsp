@@ -1,0 +1,149 @@
+\hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule}{}\section{In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule Class Reference}
+\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule}\index{In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule@{In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule}}
+
+
+View\+Model for Task\+Controller.  
+
+
+Inheritance diagram for In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a2a6f9735138119885135e10599792ebc}{View\+Model\+Schedule} (\hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e}{S\+C\+H\+E\+D\+U\+LE} \+\_\+schedule, \hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e}{S\+C\+H\+E\+D\+U\+LE} $>$ \+\_\+repo\+Schedule, \hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_d_i_s_c_i_p_l_i_n_e}{D\+I\+S\+C\+I\+P\+L\+I\+NE} $>$ \+\_\+repo\+Discipline, \hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_g_r_o_u_p}{G\+R\+O\+UP} $>$ \+\_\+repo\+Group)
+\begin{DoxyCompactList}\small\item\em C\+T\+OR Initialization from S\+C\+H\+E\+D\+U\+LE. \end{DoxyCompactList}\item 
+\hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_aedd00ac53d0f727aa23665f21bf2db92}{View\+Model\+Schedule} ()
+\item 
+Date\+Time \hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_ae5be68b52f4ccbe4231fa9d3b2666048}{Get\+Date\+Time} ()
+\begin{DoxyCompactList}\small\item\em Parse Date\+Time from string dd.\+M\+M.\+Y\+Y\+YY hh\+:mm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e}{S\+C\+H\+E\+D\+U\+LE} \hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a478198b2582f08c56df1711971a08022}{Add\+Or\+Update} (\hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e}{S\+C\+H\+E\+D\+U\+LE} \+\_\+oldS, \hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e}{S\+C\+H\+E\+D\+U\+LE} \+\_\+newS, \hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e}{S\+C\+H\+E\+D\+U\+LE} $>$ schedules)
+\begin{DoxyCompactList}\small\item\em Add\+Or\+Update -\/ if S\+C\+H\+E\+D\+U\+LE exist then Add else Update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Select\+List \hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a3cb89808a0e815b09f1085e3b945066c}{Get\+Discipline} =$>$ new Select\+List( disciplines.\+Union(repo\+Discipline.\+Get\+All()), \char`\"{}D\+I\+S\+C\+I\+P\+L\+I\+N\+E\+\_\+\+C\+O\+DE\char`\"{}, \char`\"{}D\+I\+S\+C\+I\+P\+L\+I\+N\+E\+\_\+\+N\+A\+ME\char`\"{}, D\+I\+S\+C\+I\+P\+L\+I\+N\+E\+\_\+\+C\+O\+DE)
+\begin{DoxyCompactList}\small\item\em Provide selection Discipline from Select\+List in View. \end{DoxyCompactList}\item 
+Select\+List \hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a16df99554d08b246ecfa66acb8a6238c}{Get\+Group} =$>$ new Select\+List(groups.\+Union(repo\+Group.\+Get\+All()), \char`\"{}G\+R\+O\+U\+P\+\_\+\+C\+O\+DE\char`\"{}, \char`\"{}\hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e_aa0b33a5dbbf6c590afd18a5589e5427f}{G\+R\+O\+U\+P\+\_\+\+C\+O\+DE}\char`\"{}, G\+R\+O\+U\+P\+\_\+\+C\+O\+DE)
+\begin{DoxyCompactList}\small\item\em Provide selection Group from Select\+List in View. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a8de805afbeab5943816641787f787071}{Schedule\+Room}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em To convert decimal S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+R\+O\+OM to int for view. \end{DoxyCompactList}\item 
+string \hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a8263bc709f1e63fd8d4406f1ad2d9f6f}{Old\+ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Store json of unchanged S\+C\+H\+E\+D\+U\+LE. \end{DoxyCompactList}\item 
+string \hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a36455e485d079b033236de1c892adb8f}{S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+D\+A\+T\+E2}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em To prevent hand edit of main field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+View\+Model for Task\+Controller. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a2a6f9735138119885135e10599792ebc}\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a2a6f9735138119885135e10599792ebc}} 
+\index{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}!View\+Model\+Schedule@{View\+Model\+Schedule}}
+\index{View\+Model\+Schedule@{View\+Model\+Schedule}!In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}}
+\subsubsection{\texorpdfstring{View\+Model\+Schedule()}{ViewModelSchedule()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule.\+View\+Model\+Schedule (\begin{DoxyParamCaption}\item[{\hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e}{S\+C\+H\+E\+D\+U\+LE}}]{\+\_\+schedule,  }\item[{\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e}{S\+C\+H\+E\+D\+U\+LE} $>$}]{\+\_\+repo\+Schedule,  }\item[{\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_d_i_s_c_i_p_l_i_n_e}{D\+I\+S\+C\+I\+P\+L\+I\+NE} $>$}]{\+\_\+repo\+Discipline,  }\item[{\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_g_r_o_u_p}{G\+R\+O\+UP} $>$}]{\+\_\+repo\+Group }\end{DoxyParamCaption})}
+
+
+
+C\+T\+OR Initialization from S\+C\+H\+E\+D\+U\+LE. 
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_aedd00ac53d0f727aa23665f21bf2db92}\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_aedd00ac53d0f727aa23665f21bf2db92}} 
+\index{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}!View\+Model\+Schedule@{View\+Model\+Schedule}}
+\index{View\+Model\+Schedule@{View\+Model\+Schedule}!In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}}
+\subsubsection{\texorpdfstring{View\+Model\+Schedule()}{ViewModelSchedule()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule.\+View\+Model\+Schedule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a478198b2582f08c56df1711971a08022}\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a478198b2582f08c56df1711971a08022}} 
+\index{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}!Add\+Or\+Update@{Add\+Or\+Update}}
+\index{Add\+Or\+Update@{Add\+Or\+Update}!In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}}
+\subsubsection{\texorpdfstring{Add\+Or\+Update()}{AddOrUpdate()}}
+{\footnotesize\ttfamily static \hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e}{S\+C\+H\+E\+D\+U\+LE} In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule.\+Add\+Or\+Update (\begin{DoxyParamCaption}\item[{\hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e}{S\+C\+H\+E\+D\+U\+LE}}]{\+\_\+oldS,  }\item[{\hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e}{S\+C\+H\+E\+D\+U\+LE}}]{\+\_\+newS,  }\item[{\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e}{S\+C\+H\+E\+D\+U\+LE} $>$}]{schedules }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Add\+Or\+Update -\/ if S\+C\+H\+E\+D\+U\+LE exist then Add else Update. 
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_ae5be68b52f4ccbe4231fa9d3b2666048}\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_ae5be68b52f4ccbe4231fa9d3b2666048}} 
+\index{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}!Get\+Date\+Time@{Get\+Date\+Time}}
+\index{Get\+Date\+Time@{Get\+Date\+Time}!In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}}
+\subsubsection{\texorpdfstring{Get\+Date\+Time()}{GetDateTime()}}
+{\footnotesize\ttfamily Date\+Time In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule.\+Get\+Date\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Parse Date\+Time from string dd.\+M\+M.\+Y\+Y\+YY hh\+:mm. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a3cb89808a0e815b09f1085e3b945066c}\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a3cb89808a0e815b09f1085e3b945066c}} 
+\index{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}!Get\+Discipline@{Get\+Discipline}}
+\index{Get\+Discipline@{Get\+Discipline}!In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}}
+\subsubsection{\texorpdfstring{Get\+Discipline}{GetDiscipline}}
+{\footnotesize\ttfamily Select\+List In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule.\+Get\+Discipline =$>$ new Select\+List( disciplines.\+Union(repo\+Discipline.\+Get\+All()), \char`\"{}D\+I\+S\+C\+I\+P\+L\+I\+N\+E\+\_\+\+C\+O\+DE\char`\"{}, \char`\"{}D\+I\+S\+C\+I\+P\+L\+I\+N\+E\+\_\+\+N\+A\+ME\char`\"{}, D\+I\+S\+C\+I\+P\+L\+I\+N\+E\+\_\+\+C\+O\+DE)}
+
+
+
+Provide selection Discipline from Select\+List in View. 
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a16df99554d08b246ecfa66acb8a6238c}\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a16df99554d08b246ecfa66acb8a6238c}} 
+\index{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}!Get\+Group@{Get\+Group}}
+\index{Get\+Group@{Get\+Group}!In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}}
+\subsubsection{\texorpdfstring{Get\+Group}{GetGroup}}
+{\footnotesize\ttfamily Select\+List In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule.\+Get\+Group =$>$ new Select\+List(groups.\+Union(repo\+Group.\+Get\+All()), \char`\"{}G\+R\+O\+U\+P\+\_\+\+C\+O\+DE\char`\"{}, \char`\"{}\hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e_aa0b33a5dbbf6c590afd18a5589e5427f}{G\+R\+O\+U\+P\+\_\+\+C\+O\+DE}\char`\"{}, G\+R\+O\+U\+P\+\_\+\+C\+O\+DE)}
+
+
+
+Provide selection Group from Select\+List in View. 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a8263bc709f1e63fd8d4406f1ad2d9f6f}\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a8263bc709f1e63fd8d4406f1ad2d9f6f}} 
+\index{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}!Old\+ID@{Old\+ID}}
+\index{Old\+ID@{Old\+ID}!In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}}
+\subsubsection{\texorpdfstring{Old\+ID}{OldID}}
+{\footnotesize\ttfamily string In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule.\+Old\+ID\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Store json of unchanged S\+C\+H\+E\+D\+U\+LE. 
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a36455e485d079b033236de1c892adb8f}\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a36455e485d079b033236de1c892adb8f}} 
+\index{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}!S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+D\+A\+T\+E2@{S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+D\+A\+T\+E2}}
+\index{S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+D\+A\+T\+E2@{S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+D\+A\+T\+E2}!In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}}
+\subsubsection{\texorpdfstring{S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+D\+A\+T\+E2}{SCHEDULE\_DATE2}}
+{\footnotesize\ttfamily string In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule.\+S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+D\+A\+T\+E2\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+To prevent hand edit of main field. 
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a8de805afbeab5943816641787f787071}\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a8de805afbeab5943816641787f787071}} 
+\index{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}!Schedule\+Room@{Schedule\+Room}}
+\index{Schedule\+Room@{Schedule\+Room}!In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}}
+\subsubsection{\texorpdfstring{Schedule\+Room}{ScheduleRoom}}
+{\footnotesize\ttfamily int In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule.\+Schedule\+Room\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+To convert decimal S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+R\+O\+OM to int for view. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+\_\+\+W\+O\+R\+K/\+\_\+\+S\+T\+E\+P/\+In\+Study\+Asp/\+In\+Study\+Asp/\+Models/\+User/\+Teacher/\hyperlink{_view_model_schedule_8cs}{View\+Model\+Schedule.\+cs}\end{DoxyCompactItemize}

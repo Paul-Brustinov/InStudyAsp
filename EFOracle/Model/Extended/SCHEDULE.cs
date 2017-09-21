@@ -9,6 +9,10 @@ using Newtonsoft.Json;
 
 namespace EFOracle.Model
 {
+
+    /*************************************************************************************//**
+    * \brief Specifying view metadata for SCHEDULE class
+    *****************************************************************************************/
     [MetadataType(typeof(ScheduleMetadata))]
     public partial class SCHEDULE{}
 

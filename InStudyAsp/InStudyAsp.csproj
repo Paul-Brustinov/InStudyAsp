@@ -197,7 +197,6 @@
     <Compile Include="Controllers\User\Teacher\TaskController.cs" />
     <Compile Include="Models\User\Teacher\TeacherLogin.cs" />
     <Compile Include="Controllers\User\Teacher\TeacherRegistrationController.cs" />
-    <Compile Include="Controllers\User\Teacher\TestTeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -9,32 +9,27 @@ using Repo.Common;
 
 namespace InStudyAsp.Models.User.Teacher
 {
+    /*************************************************************************************//**
+    * \brief  ViewModel for TaskController 
+    *****************************************************************************************/
     public class ViewModelSchedule : SCHEDULE
     {
         private IGenericRepository<DISCIPLINE> repoDiscipline;
         private IGenericRepository<GROUP> repoGroup;
         private IGenericRepository<SCHEDULE> repoSchedule;
-        private string id;
-        //private SCHEDULE schedule;
 
-        public ViewModelSchedule(string _id, IGenericRepository<SCHEDULE> _repoSchedule, IGenericRepository<DISCIPLINE> _repoDiscipline, IGenericRepository<GROUP> _repoGroup)
-        {
-            id = _id;
-            repoSchedule = _repoSchedule;
-            repoDiscipline = _repoDiscipline;
-            repoGroup = _repoGroup;
-        }
-
-
+        /*************************************************************************************//**
+        * \brief  CTOR Initialization from SCHEDULE
+        *****************************************************************************************/
         public ViewModelSchedule(SCHEDULE _schedule, IGenericRepository<SCHEDULE> _repoSchedule, IGenericRepository<DISCIPLINE> _repoDiscipline, IGenericRepository<GROUP> _repoGroup)
         {
-            //schedule = _schedule;
-            TEACHER_ID = _schedule.TEACHER_ID;
-            GROUP_CODE = _schedule.GROUP_CODE;
-            DISCIPLINE_CODE = _schedule.DISCIPLINE_CODE;
-            SCHEDULE_DATE = _schedule.SCHEDULE_DATE;
-            SCHEDULE_ROOM = _schedule.SCHEDULE_ROOM;
-
+            if (_schedule != null) { 
+                TEACHER_ID = _schedule.TEACHER_ID;
+                GROUP_CODE = _schedule.GROUP_CODE;
+                DISCIPLINE_CODE = _schedule.DISCIPLINE_CODE;
+                SCHEDULE_DATE = _schedule.SCHEDULE_DATE;
+                SCHEDULE_ROOM = _schedule.SCHEDULE_ROOM;
+            }
             repoSchedule = _repoSchedule;
             repoDiscipline = _repoDiscipline;
             repoGroup = _repoGroup;
@@ -44,6 +39,9 @@ namespace InStudyAsp.Models.User.Teacher
         {
         }
 
+        /*************************************************************************************//**
+        * \brief  AddOrUpdate - if SCHEDULE exist then Add else Update
+        *****************************************************************************************/
         public static SCHEDULE AddOrUpdate(SCHEDULE _oldS, SCHEDULE _newS, IGenericRepository<SCHEDULE> schedules)
         {
             SCHEDULE oldS = schedules.FindBy(x => x.TEACHER_ID == _oldS.TEACHER_ID && x.GROUP_CODE == _oldS.GROUP_CODE && x.DISCIPLINE_CODE == _oldS.DISCIPLINE_CODE && x.SCHEDULE_DATE == _oldS.SCHEDULE_DATE).FirstOrDefault();
@@ -67,6 +65,9 @@ namespace InStudyAsp.Models.User.Teacher
             return newS;
         }
 
+        /*************************************************************************************//**
+        * \brief To convert decimal SCHEDULE_ROOM to int for view
+        *****************************************************************************************/
         public int ScheduleRoom
         {
             get
@@ -78,10 +79,21 @@ namespace InStudyAsp.Models.User.Teacher
             set {SCHEDULE_ROOM = value; }
         }
 
+        /*************************************************************************************//**
+         * \brief Store json of unchanged SCHEDULE
+        *****************************************************************************************/
         public string OldID { get; set; }
 
+
+        /*************************************************************************************//**
+         * \brief To prevent hand edit of main field
+        *****************************************************************************************/
         public string SCHEDULE_DATE2 { get; set; }
 
+
+        /*************************************************************************************//**
+         * \brief Parse DateTime from string dd.MM.YYYY hh:mm
+        *****************************************************************************************/
         public DateTime GetDateTime()
         {
             int year = 0;
@@ -119,7 +131,14 @@ namespace InStudyAsp.Models.User.Teacher
             get { yield return new GROUP() {GROUP_CODE = "Select group"}; }
         }
 
+        /*!
+        * \brief Provide selection Discipline from SelectList in View
+        */
         public SelectList GetDiscipline => new SelectList( disciplines.Union(repoDiscipline.GetAll()), "DISCIPLINE_CODE", "DISCIPLINE_NAME", DISCIPLINE_CODE);
+
+        /*!
+         * \brief Provide selection Group from SelectList in View
+        */
         public SelectList GetGroup => new SelectList(groups.Union(repoGroup.GetAll()), "GROUP_CODE", "GROUP_CODE", GROUP_CODE);
     }
 }

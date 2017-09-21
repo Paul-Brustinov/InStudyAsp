@@ -13,6 +13,10 @@ using Repo.Common;
 
 namespace InStudyAsp.Controllers.User.Teacher
 {
+
+    /*************************************************************************************//**
+    * \TaskController contains CRUD actions for SCHEDULES
+    *****************************************************************************************/
     public class TaskController : Controller
     {
         private IGenericRepository<TEACHER> teachers;
@@ -21,6 +25,9 @@ namespace InStudyAsp.Controllers.User.Teacher
         private IGenericRepository<DISCIPLINE> disciplines;
         private TEACHER teacher;
 
+        /************************************************************************************//**
+        * \brief  CTOR for Ninject, and get current Teacher from System.Web.HttpContext
+        *****************************************************************************************/
         public TaskController(IGenericRepository<TEACHER> _teachers, IGenericRepository<GROUP> _groups, ScheduleRepository _schedules, IGenericRepository<DISCIPLINE> _disciplines)
         {
             teachers = _teachers;
@@ -31,21 +38,18 @@ namespace InStudyAsp.Controllers.User.Teacher
         }
 
 
-        // GET: Task
+
+        /************************************************************************************//**
+        * \brief  Task\Index returns List of Schedules for current user(teacher)
+        *****************************************************************************************/
         [Authorize]
         public ActionResult Index()
         {
             // Getting identity
-            
-            //IQueryable<SCHEDULE> schedules;
+ 
             List<SCHEDULE> teacherSchedules;
             using (EFOracle.Model.dbContext context = new EFOracle.Model.dbContext())
             {
-                
-                //var teacher = new TeacherRepository(context).FindBy(x => x.USER_PHONE == identity).FirstOrDefault();
-                //var teacher = context.TEACHERs.FirstOrDefault(x => x.USER_PHONE == identity);
-                //schedules = context.SCHEDULEs.Where(x => x.TEACHER_ID == teacher.TEACHER_ID).ToList();
-                //schedules = new ScheduleRepository(context).FindBy(x => x.TEACHER_ID == teacher.TEACHER_ID).ToList();
                 teacherSchedules = schedules.FindBy(x => x.TEACHER_ID == teacher.TEACHER_ID).ToList();
                 teacherSchedules.ForEach(x => { x.DISCIPLINE = context.DISCIPLINEs.FirstOrDefault(y=>y.DISCIPLINE_CODE==x.DISCIPLINE_CODE); });
                 teacherSchedules.ForEach(x => { x.GROUP = context.GROUPs.FirstOrDefault(y => y.GROUP_CODE == x.GROUP_CODE); });
@@ -54,11 +58,14 @@ namespace InStudyAsp.Controllers.User.Teacher
             return View(teacherSchedules);
         }
 
+        /*************************************************************************************//**
+        * \brief  
+        *****************************************************************************************/
         [Authorize]
         [HttpGet]
-        public ActionResult New(string Id = "")
+        public ActionResult New()
         {
-            ViewModelSchedule model = new ViewModelSchedule(Id, schedules, disciplines, groups);
+            ViewModelSchedule model = new ViewModelSchedule(null, schedules, disciplines, groups);
             SCHEDULE schedule = model;
 
             string json = JsonConvert.SerializeObject(schedule, Formatting.Indented);
@@ -70,6 +77,9 @@ namespace InStudyAsp.Controllers.User.Teacher
             return View("Edit", model);
         }
 
+        /*************************************************************************************//**
+        * \brief Saving data from new or existing SCHEDULE
+        *****************************************************************************************/
         [Authorize]
         [HttpPost]
         public ActionResult EditPost(ViewModelSchedule _schedule)
@@ -96,6 +106,10 @@ namespace InStudyAsp.Controllers.User.Teacher
         }
 
 
+        /*************************************************************************************//**
+        * \brief Geting page to Edit SCHEDULE
+        * There is using POST request to pass multiple params for multiple columns Primary Key
+        *****************************************************************************************/
         [Authorize]
         [HttpPost]
         public ActionResult EditGet()
@@ -123,6 +137,9 @@ namespace InStudyAsp.Controllers.User.Teacher
             return View("Edit", model);
         }
 
+        /*************************************************************************************//**
+        * \brief Action to delete SCHEDULE
+        *****************************************************************************************/
         [Authorize]
         [HttpPost]
         public ActionResult Delete()

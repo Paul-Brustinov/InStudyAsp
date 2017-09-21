@@ -15,22 +15,27 @@ using Microsoft.Web.Mvc.Controls;
 
 namespace InStudyAsp.Controllers.User.Teacher
 {
+    /*************************************************************************************//**
+    * \TeacherRegistrationController contains all user idenification actions
+    *   provides Registration, Veryfiaccount, Login, Logout actions
+    *****************************************************************************************/
     public class TeacherRegistrationController : Controller
     {
-        /*!
-        * Registration GET action
-        */
 
+        /********************************************//**
+        * \Registration GET action
+        *   id - SESSION_HASH from USER_SESSION
+        ***********************************************/
         [HttpGet]
         public ActionResult Registration()
         {
             return View();
         }
 
-        /*!
-        * Registration POST action
-        */
-
+        /********************************************//**
+        * \Registration POST action
+        *   id - SESSION_HASH from USER_SESSION
+        ***********************************************/
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Registration(
@@ -47,9 +52,17 @@ namespace InStudyAsp.Controllers.User.Teacher
                 return View(teacherRegistration);
             }
 
+            #region Phone is already exists
+            if (teacherRegistration.PhoneExist())
+            {
+                ModelState.AddModelError("Phone", "Phone already exists!");
+                return View(teacherRegistration);
+            }
+            #endregion
 
-            //TODO: Findout why is this damned teacherRegistration.Avatar null
-            //Файл почему-то не передается
+            //todo: move path to files to Web.config
+            //todo: make saving file directly from teacherRegistration.Avatar.InputStream
+            #region Saving file region
             using (MemoryStream memoryStream = new MemoryStream())
             {
                 teacherRegistration.Avatar.InputStream.CopyTo(memoryStream);
@@ -61,16 +74,6 @@ namespace InStudyAsp.Controllers.User.Teacher
                     file.Write(bytes, 0, bytes.Length);
                 }
             }
-
-
-            #region Phone is already exists
-
-            if (teacherRegistration.PhoneExist())
-            {
-                ModelState.AddModelError("Phone", "Phone already exists!");
-                return View(teacherRegistration);
-            }
-
             #endregion
 
             #region Save data to database
@@ -78,14 +81,11 @@ namespace InStudyAsp.Controllers.User.Teacher
             teacherRegistration.ActivationCode = Guid.NewGuid().ToString();
 
             teacherRegistration.SaveToDatabase(new EFOracle.Model.dbContext());
-            
 
-            //Send Email to User
-            //SendVerificationLinkEmail(user.EmailID, user.ActivationCode.ToString());
-            Message = "Registration successfully done.";
-                //;" Account activation link has been send to you email id :" + user.EmailID;
+            Message = "Registration successfully done.Account activation link has been send to you email id :" + teacherRegistration.Email;
             Status = true;
 
+            //todo: move password, email, SmtpHost, SmtpPort to Web.config
             var verifyUrl = "/TeacherRegistration/VerifyAccount/" + teacherRegistration.ActivationCode;
             var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
             new VerificationMailSender()
@@ -106,9 +106,11 @@ namespace InStudyAsp.Controllers.User.Teacher
         }
 
 
-        /*!
-         * Verify Account 
-        */
+
+        /********************************************//**
+        * \Verify Account, set mark USER.USER_IS_ACTIVATED = -1
+        *   id - USER_SESSION.SESSION_HASH
+        ***********************************************/
         [HttpGet]
         public ActionResult VerifyAccount(string id)
         {
@@ -124,7 +126,6 @@ namespace InStudyAsp.Controllers.User.Teacher
                 if (userSession == null) return View();
 
                 var user = dbContext.USERs.FirstOrDefault(u => u.USER_PHONE == userSession.USER_PHONE_FK);
-                //TODO: Findout where IsEmailVerified must be persisted!
                 if (user == null) return View();
 
                 user.USER_IS_ACTIVATED = -1;
@@ -136,19 +137,19 @@ namespace InStudyAsp.Controllers.User.Teacher
         }
 
 
-        /*!
-        *  Processing Login Get
-        * \return redurect to Action Login
-        */
+        /********************************************//**
+        * \ Processing Login Get
+        ***********************************************/
         [HttpGet]
         public ActionResult Login()
         {
             return View();
         }
 
-        /*!
-         * Process sended login data
-         */
+
+        /********************************************//**
+         * \Process sended login data
+        ***********************************************/
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(TeacherLogin login, string returnUrl = "")
@@ -162,9 +163,7 @@ namespace InStudyAsp.Controllers.User.Teacher
 
                     if (string.CompareOrdinal(crPass, user.USER_PASSWORD) == 0 && user.USER_IS_ACTIVATED == -1)
                     {
-
-
-                        int timeout = login.RememberMe ? 525600 : 52560; // 525600 == year 20
+                        int timeout = login.RememberMe ? 525600 : 20;
                         var ticket = new FormsAuthenticationTicket(login.Phone, login.RememberMe, timeout);
                         string encryped = FormsAuthentication.Encrypt(ticket);
                         var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryped)
@@ -184,10 +183,10 @@ namespace InStudyAsp.Controllers.User.Teacher
             return View();
         }
 
-        /*!
-         *  Processing Logout
-         * \return redurect to Action Login
-         */
+        /********************************************//**
+        * \Processing Logout
+        *   redirect to Action Login
+        ***********************************************/
         [Authorize]
         [HttpPost]
         public ActionResult Logout()

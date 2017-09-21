@@ -8,11 +8,15 @@ using FluentValidation;
 namespace InStudyAsp.Models.User.Teacher
 {
 
+    /*************************************************************************************//**
+    * \brief ViewModel for Login view
+    *****************************************************************************************/
     [FluentValidation.Attributes.Validator(typeof(TeacherLogin))]
     public class TeacherLogin
     {
         [Display(Name = "Phone")]
         public string Phone { get; set; }
+
         [Display(Name = "Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
@@ -21,8 +25,16 @@ namespace InStudyAsp.Models.User.Teacher
         public bool RememberMe { get; set; }
     }
 
+
+    /*************************************************************************************//**
+    * \brief Login validator
+    *****************************************************************************************/
     class TeacherLoginValidator : AbstractValidator<TeacherLogin>
     {
+
+        /*************************************************************************************//**
+        * \brief Login validatation rules
+        *****************************************************************************************/
         public TeacherLoginValidator()
         {
             RuleFor(x => x.Phone).NotNull().Length(4, 20);

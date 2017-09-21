@@ -1,0 +1,99 @@
+\hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller}{}\section{In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Task\+Controller Class Reference}
+\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller}\index{In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Task\+Controller@{In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Task\+Controller}}
+Inheritance diagram for In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Task\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_aa263231cb68f3b2bf018d0bef50034f6}{Task\+Controller} (\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_t_e_a_c_h_e_r}{T\+E\+A\+C\+H\+ER} $>$ \+\_\+teachers, \hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_g_r_o_u_p}{G\+R\+O\+UP} $>$ \+\_\+groups, \hyperlink{class_repo_1_1_schedule_repository}{Schedule\+Repository} \+\_\+schedules, \hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_d_i_s_c_i_p_l_i_n_e}{D\+I\+S\+C\+I\+P\+L\+I\+NE} $>$ \+\_\+disciplines)
+\begin{DoxyCompactList}\small\item\em C\+T\+OR for Ninject, and get current \hyperlink{namespace_in_study_asp_1_1_controllers_1_1_user_1_1_teacher}{Teacher} from System.\+Web.\+Http\+Context. \end{DoxyCompactList}\item 
+Action\+Result \hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_a88f346da5b2fda2a6499cd0decd19f3f}{Index} ()
+\begin{DoxyCompactList}\small\item\em Task returns List of Schedules for current user(teacher) \end{DoxyCompactList}\item 
+Action\+Result \hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_ad6ce793aa9b6c80888605d79163bf48a}{New} ()
+\begin{DoxyCompactList}\small\item\em \begin{DoxyVerb}\end{DoxyVerb}
+ \end{DoxyCompactList}\item 
+Action\+Result \hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_a8d790822160cc184b71d58b1b20cd060}{Edit\+Post} (\hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule}{View\+Model\+Schedule} \+\_\+schedule)
+\begin{DoxyCompactList}\small\item\em Saving data from new or existing S\+C\+H\+E\+D\+U\+LE. \end{DoxyCompactList}\item 
+Action\+Result \hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_ae766a4b260974a72ef400f12e1c9afed}{Edit\+Get} ()
+\begin{DoxyCompactList}\small\item\em Geting page to Edit S\+C\+H\+E\+D\+U\+LE There is using P\+O\+ST request to pass multiple params for multiple columns Primary Key. \end{DoxyCompactList}\item 
+Action\+Result \hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_af96d0db6c6f1f3b3942b4fff837d63b2}{Delete} ()
+\begin{DoxyCompactList}\small\item\em Action to delete S\+C\+H\+E\+D\+U\+LE. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+contains C\+R\+UD actions for S\+C\+H\+E\+D\+U\+L\+ES 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_aa263231cb68f3b2bf018d0bef50034f6}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_aa263231cb68f3b2bf018d0bef50034f6}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller}!Task\+Controller@{Task\+Controller}}
+\index{Task\+Controller@{Task\+Controller}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller}}
+\subsubsection{\texorpdfstring{Task\+Controller()}{TaskController()}}
+{\footnotesize\ttfamily In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Task\+Controller.\+Task\+Controller (\begin{DoxyParamCaption}\item[{\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_t_e_a_c_h_e_r}{T\+E\+A\+C\+H\+ER} $>$}]{\+\_\+teachers,  }\item[{\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_g_r_o_u_p}{G\+R\+O\+UP} $>$}]{\+\_\+groups,  }\item[{\hyperlink{class_repo_1_1_schedule_repository}{Schedule\+Repository}}]{\+\_\+schedules,  }\item[{\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_d_i_s_c_i_p_l_i_n_e}{D\+I\+S\+C\+I\+P\+L\+I\+NE} $>$}]{\+\_\+disciplines }\end{DoxyParamCaption})}
+
+
+
+C\+T\+OR for Ninject, and get current \hyperlink{namespace_in_study_asp_1_1_controllers_1_1_user_1_1_teacher}{Teacher} from System.\+Web.\+Http\+Context. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_af96d0db6c6f1f3b3942b4fff837d63b2}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_af96d0db6c6f1f3b3942b4fff837d63b2}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller}!Delete@{Delete}}
+\index{Delete@{Delete}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller}}
+\subsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily Action\+Result In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Task\+Controller.\+Delete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Action to delete S\+C\+H\+E\+D\+U\+LE. 
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_ae766a4b260974a72ef400f12e1c9afed}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_ae766a4b260974a72ef400f12e1c9afed}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller}!Edit\+Get@{Edit\+Get}}
+\index{Edit\+Get@{Edit\+Get}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Get()}{EditGet()}}
+{\footnotesize\ttfamily Action\+Result In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Task\+Controller.\+Edit\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Geting page to Edit S\+C\+H\+E\+D\+U\+LE There is using P\+O\+ST request to pass multiple params for multiple columns Primary Key. 
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_a8d790822160cc184b71d58b1b20cd060}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_a8d790822160cc184b71d58b1b20cd060}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller}!Edit\+Post@{Edit\+Post}}
+\index{Edit\+Post@{Edit\+Post}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Post()}{EditPost()}}
+{\footnotesize\ttfamily Action\+Result In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Task\+Controller.\+Edit\+Post (\begin{DoxyParamCaption}\item[{\hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule}{View\+Model\+Schedule}}]{\+\_\+schedule }\end{DoxyParamCaption})}
+
+
+
+Saving data from new or existing S\+C\+H\+E\+D\+U\+LE. 
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_a88f346da5b2fda2a6499cd0decd19f3f}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_a88f346da5b2fda2a6499cd0decd19f3f}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller}!Index@{Index}}
+\index{Index@{Index}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller}}
+\subsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily Action\+Result In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Task\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Task returns List of Schedules for current user(teacher) 
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_ad6ce793aa9b6c80888605d79163bf48a}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_task_controller_ad6ce793aa9b6c80888605d79163bf48a}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller}!New@{New}}
+\index{New@{New}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Task\+Controller}}
+\subsubsection{\texorpdfstring{New()}{New()}}
+{\footnotesize\ttfamily Action\+Result In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Task\+Controller.\+New (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\begin{DoxyVerb}\end{DoxyVerb}
+ 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+\_\+\+W\+O\+R\+K/\+\_\+\+S\+T\+E\+P/\+In\+Study\+Asp/\+In\+Study\+Asp/\+Controllers/\+User/\+Teacher/\hyperlink{_task_controller_8cs}{Task\+Controller.\+cs}\end{DoxyCompactItemize}
