@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['verificationmailsender',['VerificationMailSender',['../class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_verification_mail_sender.html',1,'InStudyAsp::Models::User::Teacher']]],
-  ['viewmodelschedule',['ViewModelSchedule',['../class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule.html',1,'InStudyAsp::Models::User::Teacher']]]
+  ['user',['USER',['../class_e_f_oracle_1_1_model_1_1_u_s_e_r.html',1,'EFOracle::Model']]],
+  ['user_5fsession',['USER_SESSION',['../class_e_f_oracle_1_1_model_1_1_u_s_e_r___s_e_s_s_i_o_n.html',1,'EFOracle::Model']]],
+  ['userrepository',['UserRepository',['../class_repo_1_1_user_repository.html',1,'Repo']]]
 ];

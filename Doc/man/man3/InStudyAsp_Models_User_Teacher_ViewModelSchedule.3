@@ -1,0 +1,140 @@
+.TH "InStudyAsp.Models.User.Teacher.ViewModelSchedule" 3 "Fri Sep 22 2017" "InStudyAsp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InStudyAsp.Models.User.Teacher.ViewModelSchedule \- ViewModel for ScheduleController\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBEFOracle\&.Model\&.SCHEDULE\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBViewModelSchedule\fP (\fBSCHEDULE\fP _schedule, \fBIGenericRepository\fP< \fBSCHEDULE\fP > _repoSchedule, \fBIGenericRepository\fP< \fBDISCIPLINE\fP > _repoDiscipline, \fBIGenericRepository\fP< \fBGROUP\fP > _repoGroup)"
+.br
+.RI "CTOR Initialization from SCHEDULE\&. "
+.ti -1c
+.RI "\fBViewModelSchedule\fP ()"
+.br
+.ti -1c
+.RI "DateTime \fBGetDateTime\fP ()"
+.br
+.RI "Parse DateTime from string dd\&.MM\&.YYYY hh:mm\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBSCHEDULE\fP \fBAddOrUpdate\fP (\fBSCHEDULE\fP _oldS, \fBSCHEDULE\fP _newS, \fBIGenericRepository\fP< \fBSCHEDULE\fP > schedules)"
+.br
+.RI "AddOrUpdate - if SCHEDULE exist then Add else Update\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "SelectList \fBGetDiscipline\fP => new SelectList( disciplines\&.Union(repoDiscipline\&.GetAll()), 'DISCIPLINE_CODE', 'DISCIPLINE_NAME', DISCIPLINE_CODE)"
+.br
+.RI "Provide selection Discipline from SelectList in View\&. "
+.ti -1c
+.RI "SelectList \fBGetGroup\fP => new SelectList(groups\&.Union(repoGroup\&.GetAll()), 'GROUP_CODE', '\fBGROUP_CODE\fP', GROUP_CODE)"
+.br
+.RI "Provide selection Group from SelectList in View\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBScheduleRoom\fP\fC [get, set]\fP"
+.br
+.RI "To convert decimal SCHEDULE_ROOM to int for view\&. "
+.ti -1c
+.RI "string \fBOldID\fP\fC [get, set]\fP"
+.br
+.RI "Store json of unchanged SCHEDULE\&. "
+.ti -1c
+.RI "string \fBSCHEDULE_DATE2\fP\fC [get, set]\fP"
+.br
+.RI "To prevent hand edit of main field\&. "
+.ti -1c
+.RI "IEnumerable< \fBDISCIPLINE\fP > \fBdisciplines\fP\fC [get]\fP"
+.br
+.ti -1c
+.RI "IEnumerable< \fBGROUP\fP > \fBgroups\fP\fC [get]\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBIGenericRepository\fP< \fBDISCIPLINE\fP > \fBrepoDiscipline\fP"
+.br
+.ti -1c
+.RI "\fBIGenericRepository\fP< \fBGROUP\fP > \fBrepoGroup\fP"
+.br
+.ti -1c
+.RI "\fBIGenericRepository\fP< \fBSCHEDULE\fP > \fBrepoSchedule\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+ViewModel for ScheduleController\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "InStudyAsp\&.Models\&.User\&.Teacher\&.ViewModelSchedule\&.ViewModelSchedule (\fBSCHEDULE\fP _schedule, \fBIGenericRepository\fP< \fBSCHEDULE\fP > _repoSchedule, \fBIGenericRepository\fP< \fBDISCIPLINE\fP > _repoDiscipline, \fBIGenericRepository\fP< \fBGROUP\fP > _repoGroup)"
+
+.PP
+CTOR Initialization from SCHEDULE\&. 
+.SS "InStudyAsp\&.Models\&.User\&.Teacher\&.ViewModelSchedule\&.ViewModelSchedule ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "static \fBSCHEDULE\fP InStudyAsp\&.Models\&.User\&.Teacher\&.ViewModelSchedule\&.AddOrUpdate (\fBSCHEDULE\fP _oldS, \fBSCHEDULE\fP _newS, \fBIGenericRepository\fP< \fBSCHEDULE\fP > schedules)\fC [static]\fP"
+
+.PP
+AddOrUpdate - if SCHEDULE exist then Add else Update\&. 
+.SS "DateTime InStudyAsp\&.Models\&.User\&.Teacher\&.ViewModelSchedule\&.GetDateTime ()"
+
+.PP
+Parse DateTime from string dd\&.MM\&.YYYY hh:mm\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "SelectList InStudyAsp\&.Models\&.User\&.Teacher\&.ViewModelSchedule\&.GetDiscipline => new SelectList( disciplines\&.Union(repoDiscipline\&.GetAll()), 'DISCIPLINE_CODE', 'DISCIPLINE_NAME', DISCIPLINE_CODE)"
+
+.PP
+Provide selection Discipline from SelectList in View\&. 
+.SS "SelectList InStudyAsp\&.Models\&.User\&.Teacher\&.ViewModelSchedule\&.GetGroup => new SelectList(groups\&.Union(repoGroup\&.GetAll()), 'GROUP_CODE', '\fBGROUP_CODE\fP', GROUP_CODE)"
+
+.PP
+Provide selection Group from SelectList in View\&. 
+.SS "\fBIGenericRepository\fP<\fBDISCIPLINE\fP> InStudyAsp\&.Models\&.User\&.Teacher\&.ViewModelSchedule\&.repoDiscipline\fC [private]\fP"
+
+.SS "\fBIGenericRepository\fP<\fBGROUP\fP> InStudyAsp\&.Models\&.User\&.Teacher\&.ViewModelSchedule\&.repoGroup\fC [private]\fP"
+
+.SS "\fBIGenericRepository\fP<\fBSCHEDULE\fP> InStudyAsp\&.Models\&.User\&.Teacher\&.ViewModelSchedule\&.repoSchedule\fC [private]\fP"
+
+.SH "Property Documentation"
+.PP 
+.SS "IEnumerable<\fBDISCIPLINE\fP> InStudyAsp\&.Models\&.User\&.Teacher\&.ViewModelSchedule\&.disciplines\fC [get]\fP, \fC [private]\fP"
+
+.SS "IEnumerable<\fBGROUP\fP> InStudyAsp\&.Models\&.User\&.Teacher\&.ViewModelSchedule\&.groups\fC [get]\fP, \fC [private]\fP"
+
+.SS "string InStudyAsp\&.Models\&.User\&.Teacher\&.ViewModelSchedule\&.OldID\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Store json of unchanged SCHEDULE\&. 
+.SS "string InStudyAsp\&.Models\&.User\&.Teacher\&.ViewModelSchedule\&.SCHEDULE_DATE2\fC [get]\fP, \fC [set]\fP"
+
+.PP
+To prevent hand edit of main field\&. 
+.SS "int InStudyAsp\&.Models\&.User\&.Teacher\&.ViewModelSchedule\&.ScheduleRoom\fC [get]\fP, \fC [set]\fP"
+
+.PP
+To convert decimal SCHEDULE_ROOM to int for view\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for InStudyAsp from the source code\&.

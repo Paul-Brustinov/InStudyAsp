@@ -1,0 +1,53 @@
+.TH "InStudyAsp.Controllers.User.Teacher.TeacherRegistrationController" 3 "Fri Sep 22 2017" "InStudyAsp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InStudyAsp.Controllers.User.Teacher.TeacherRegistrationController
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Controller\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "ActionResult \fBRegistration\fP ()"
+.br
+.ti -1c
+.RI "ActionResult \fBRegistration\fP ([Bind(Exclude='IsEmailVeryfied,ActivationCode')] TeacherRegistration teacherRegistration)"
+.br
+.ti -1c
+.RI "ActionResult \fBVerifyAccount\fP (string id)"
+.br
+.ti -1c
+.RI "ActionResult \fBLogin\fP ()"
+.br
+.ti -1c
+.RI "ActionResult \fBLogin\fP (\fBTeacherLogin\fP login, string returnUrl='')"
+.br
+.ti -1c
+.RI "ActionResult \fBLogout\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+contains all user idenification actions provides Registration, Veryfiaccount, Login, Logout actions 
+.SH "Member Function Documentation"
+.PP 
+.SS "ActionResult InStudyAsp\&.Controllers\&.User\&.Teacher\&.TeacherRegistrationController\&.Login ()"
+\\ Processing Login Get 
+.SS "ActionResult InStudyAsp\&.Controllers\&.User\&.Teacher\&.TeacherRegistrationController\&.Login (\fBTeacherLogin\fP login, string returnUrl = \fC''\fP)"
+sended login data 
+.SS "ActionResult InStudyAsp\&.Controllers\&.User\&.Teacher\&.TeacherRegistrationController\&.Logout ()"
+Logout redirect to Action Login 
+.SS "ActionResult InStudyAsp\&.Controllers\&.User\&.Teacher\&.TeacherRegistrationController\&.Registration ()"
+GET action id - SESSION_HASH from USER_SESSION 
+.SS "ActionResult InStudyAsp\&.Controllers\&.User\&.Teacher\&.TeacherRegistrationController\&.Registration ([Bind(Exclude = 'IsEmailVeryfied,ActivationCode')] \fBTeacherRegistration\fP teacherRegistration)"
+POST action id - SESSION_HASH from USER_SESSION 
+.SS "ActionResult InStudyAsp\&.Controllers\&.User\&.Teacher\&.TeacherRegistrationController\&.VerifyAccount (string id)"
+Account, set mark USER\&.USER_IS_ACTIVATED = -1 id - USER_SESSION\&.SESSION_HASH 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for InStudyAsp from the source code\&.

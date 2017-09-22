@@ -1,0 +1,116 @@
+.TH "InStudyAsp.Controllers.User.Teacher.ScheduleController" 3 "Fri Sep 22 2017" "InStudyAsp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InStudyAsp.Controllers.User.Teacher.ScheduleController
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Controller\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBScheduleController\fP (\fBIGenericRepository\fP< \fBTEACHER\fP > _teachers, \fBIGenericRepository\fP< \fBGROUP\fP > _groups, \fBScheduleRepository\fP _schedules, \fBIGenericRepository\fP< \fBDISCIPLINE\fP > _disciplines)"
+.br
+.RI "CTOR for Ninject, and get current \fBTeacher\fP from System\&.Web\&.HttpContext\&. "
+.ti -1c
+.RI "ActionResult \fBIndex\fP ()"
+.br
+.RI "Task returns List of Schedules for current user(teacher) "
+.ti -1c
+.RI "ActionResult \fBNew\fP ()"
+.br
+.RI "
+.PP
+.nf
+
+.fi
+.PP
+ "
+.ti -1c
+.RI "ActionResult \fBEditPost\fP (\fBViewModelSchedule\fP _schedule)"
+.br
+.RI "Saving data from new or existing SCHEDULE\&. "
+.ti -1c
+.RI "ActionResult \fBEditGet\fP ()"
+.br
+.RI "Geting page to Edit SCHEDULE There is using POST request to pass multiple params for multiple columns Primary Key\&. "
+.ti -1c
+.RI "ActionResult \fBDelete\fP ()"
+.br
+.RI "Action to delete SCHEDULE\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBIGenericRepository\fP< \fBTEACHER\fP > \fBteachers\fP"
+.br
+.ti -1c
+.RI "\fBIGenericRepository\fP< \fBGROUP\fP > \fBgroups\fP"
+.br
+.ti -1c
+.RI "\fBIGenericRepository\fP< \fBSCHEDULE\fP > \fBschedules\fP"
+.br
+.ti -1c
+.RI "\fBIGenericRepository\fP< \fBDISCIPLINE\fP > \fBdisciplines\fP"
+.br
+.ti -1c
+.RI "\fBTEACHER\fP \fBteacher\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+contains CRUD actions for SCHEDULES 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "InStudyAsp\&.Controllers\&.User\&.Teacher\&.ScheduleController\&.ScheduleController (\fBIGenericRepository\fP< \fBTEACHER\fP > _teachers, \fBIGenericRepository\fP< \fBGROUP\fP > _groups, \fBScheduleRepository\fP _schedules, \fBIGenericRepository\fP< \fBDISCIPLINE\fP > _disciplines)"
+
+.PP
+CTOR for Ninject, and get current \fBTeacher\fP from System\&.Web\&.HttpContext\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "ActionResult InStudyAsp\&.Controllers\&.User\&.Teacher\&.ScheduleController\&.Delete ()"
+
+.PP
+Action to delete SCHEDULE\&. 
+.SS "ActionResult InStudyAsp\&.Controllers\&.User\&.Teacher\&.ScheduleController\&.EditGet ()"
+
+.PP
+Geting page to Edit SCHEDULE There is using POST request to pass multiple params for multiple columns Primary Key\&. 
+.SS "ActionResult InStudyAsp\&.Controllers\&.User\&.Teacher\&.ScheduleController\&.EditPost (\fBViewModelSchedule\fP _schedule)"
+
+.PP
+Saving data from new or existing SCHEDULE\&. 
+.SS "ActionResult InStudyAsp\&.Controllers\&.User\&.Teacher\&.ScheduleController\&.Index ()"
+
+.PP
+Task returns List of Schedules for current user(teacher) 
+.SS "ActionResult InStudyAsp\&.Controllers\&.User\&.Teacher\&.ScheduleController\&.New ()"
+
+.PP
+
+.PP
+.nf
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBIGenericRepository\fP<\fBDISCIPLINE\fP> InStudyAsp\&.Controllers\&.User\&.Teacher\&.ScheduleController\&.disciplines\fC [private]\fP"
+
+.SS "\fBIGenericRepository\fP<\fBGROUP\fP> InStudyAsp\&.Controllers\&.User\&.Teacher\&.ScheduleController\&.groups\fC [private]\fP"
+
+.SS "\fBIGenericRepository\fP<\fBSCHEDULE\fP> InStudyAsp\&.Controllers\&.User\&.Teacher\&.ScheduleController\&.schedules\fC [private]\fP"
+
+.SS "\fBTEACHER\fP InStudyAsp\&.Controllers\&.User\&.Teacher\&.ScheduleController\&.teacher\fC [private]\fP"
+
+.SS "\fBIGenericRepository\fP<\fBTEACHER\fP> InStudyAsp\&.Controllers\&.User\&.Teacher\&.ScheduleController\&.teachers\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for InStudyAsp from the source code\&.

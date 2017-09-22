@@ -15,9 +15,9 @@ namespace InStudyAsp.Controllers.User.Teacher
 {
 
     /*************************************************************************************//**
-    * \TaskController contains CRUD actions for SCHEDULES
+    * \ScheduleController contains CRUD actions for SCHEDULES
     *****************************************************************************************/
-    public class TaskController : Controller
+    public class ScheduleController : Controller
     {
         private IGenericRepository<TEACHER> teachers;
         private IGenericRepository<GROUP> groups;
@@ -28,7 +28,7 @@ namespace InStudyAsp.Controllers.User.Teacher
         /************************************************************************************//**
         * \brief  CTOR for Ninject, and get current Teacher from System.Web.HttpContext
         *****************************************************************************************/
-        public TaskController(IGenericRepository<TEACHER> _teachers, IGenericRepository<GROUP> _groups, ScheduleRepository _schedules, IGenericRepository<DISCIPLINE> _disciplines)
+        public ScheduleController(IGenericRepository<TEACHER> _teachers, IGenericRepository<GROUP> _groups, ScheduleRepository _schedules, IGenericRepository<DISCIPLINE> _disciplines)
         {
             teachers = _teachers;
             groups = _groups;

@@ -1,0 +1,79 @@
+.TH "InStudyAsp.App_Start.NinjectWebCommon" 3 "Fri Sep 22 2017" "InStudyAsp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InStudyAsp.App_Start.NinjectWebCommon
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBStart\fP ()"
+.br
+.RI "Starts the application "
+.ti -1c
+.RI "static void \fBStop\fP ()"
+.br
+.RI "Stops the application\&. "
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static IKernel \fBCreateKernel\fP ()"
+.br
+.RI "Creates the kernel that will manage your application\&. "
+.ti -1c
+.RI "static void \fBRegisterServices\fP (IKernel kernel)"
+.br
+.RI "Load your modules or register your services here! "
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static readonly Bootstrapper \fBbootstrapper\fP = new Bootstrapper()"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "static IKernel InStudyAsp\&.App_Start\&.NinjectWebCommon\&.CreateKernel ()\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Creates the kernel that will manage your application\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The created kernel\&.
+.RE
+.PP
+
+.SS "static void InStudyAsp\&.App_Start\&.NinjectWebCommon\&.RegisterServices (IKernel kernel)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Load your modules or register your services here! 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkernel\fP The kernel\&.
+.RE
+.PP
+
+.SS "static void InStudyAsp\&.App_Start\&.NinjectWebCommon\&.Start ()\fC [static]\fP"
+
+.PP
+Starts the application 
+.SS "static void InStudyAsp\&.App_Start\&.NinjectWebCommon\&.Stop ()\fC [static]\fP"
+
+.PP
+Stops the application\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "readonly Bootstrapper InStudyAsp\&.App_Start\&.NinjectWebCommon\&.bootstrapper = new Bootstrapper()\fC [static]\fP, \fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for InStudyAsp from the source code\&.

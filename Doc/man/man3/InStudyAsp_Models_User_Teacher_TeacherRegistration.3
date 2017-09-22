@@ -1,0 +1,103 @@
+.TH "InStudyAsp.Models.User.Teacher.TeacherRegistration" 3 "Fri Sep 22 2017" "InStudyAsp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InStudyAsp.Models.User.Teacher.TeacherRegistration \- ViewModel for teacherRegistration\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBPhoneExist\fP ()"
+.br
+.ti -1c
+.RI "void \fBSaveToDatabase\fP (\fBEFOracle\&.Model\&.dbContext\fP \fBdbContext\fP)"
+.br
+.RI "Saving registration data to db\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBFirstname\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBLastname\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBEmail\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBPhone\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "DateTime \fBBirthday\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "HttpPostedFileBase \fBAvatar\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "DateTime \fBStart\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBPassword\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBConfirmPassword\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBActivationCode\fP\fC [get, set]\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "string \fBHash\fP (string pass)"
+.br
+.RI "Hashing password\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+ViewModel for teacherRegistration\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "string InStudyAsp\&.Models\&.User\&.Teacher\&.TeacherRegistration\&.Hash (string pass)\fC [private]\fP"
+
+.PP
+Hashing password\&. 
+.SS "bool InStudyAsp\&.Models\&.User\&.Teacher\&.TeacherRegistration\&.PhoneExist ()"
+
+.SS "void InStudyAsp\&.Models\&.User\&.Teacher\&.TeacherRegistration\&.SaveToDatabase (\fBEFOracle\&.Model\&.dbContext\fP dbContext)"
+
+.PP
+Saving registration data to db\&. 
+.SH "Property Documentation"
+.PP 
+.SS "string InStudyAsp\&.Models\&.User\&.Teacher\&.TeacherRegistration\&.ActivationCode\fC [get]\fP, \fC [set]\fP"
+
+.SS "HttpPostedFileBase InStudyAsp\&.Models\&.User\&.Teacher\&.TeacherRegistration\&.Avatar\fC [get]\fP, \fC [set]\fP"
+
+.SS "DateTime InStudyAsp\&.Models\&.User\&.Teacher\&.TeacherRegistration\&.Birthday\fC [get]\fP, \fC [set]\fP"
+
+.SS "string InStudyAsp\&.Models\&.User\&.Teacher\&.TeacherRegistration\&.ConfirmPassword\fC [get]\fP, \fC [set]\fP"
+
+.SS "string InStudyAsp\&.Models\&.User\&.Teacher\&.TeacherRegistration\&.Email\fC [get]\fP, \fC [set]\fP"
+
+.SS "string InStudyAsp\&.Models\&.User\&.Teacher\&.TeacherRegistration\&.Firstname\fC [get]\fP, \fC [set]\fP"
+
+.SS "string InStudyAsp\&.Models\&.User\&.Teacher\&.TeacherRegistration\&.Lastname\fC [get]\fP, \fC [set]\fP"
+
+.SS "string InStudyAsp\&.Models\&.User\&.Teacher\&.TeacherRegistration\&.Password\fC [get]\fP, \fC [set]\fP"
+
+.SS "string InStudyAsp\&.Models\&.User\&.Teacher\&.TeacherRegistration\&.Phone\fC [get]\fP, \fC [set]\fP"
+
+.SS "DateTime InStudyAsp\&.Models\&.User\&.Teacher\&.TeacherRegistration\&.Start\fC [get]\fP, \fC [set]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for InStudyAsp from the source code\&.

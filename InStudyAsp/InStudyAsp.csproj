@@ -194,7 +194,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\User\Student\TestStudentController.cs" />
-    <Compile Include="Controllers\User\Teacher\TaskController.cs" />
+    <Compile Include="Controllers\User\Teacher\ScheduleController.cs" />
     <Compile Include="Models\User\Teacher\TeacherLogin.cs" />
     <Compile Include="Controllers\User\Teacher\TeacherRegistrationController.cs" />
     <Compile Include="Global.asax.cs">
@@ -226,8 +226,8 @@
     <Content Include="Views\TeacherRegistration\Registration.cshtml" />
     <Content Include="Views\TeacherRegistration\Login.cshtml" />
     <Content Include="Views\TeacherRegistration\VerifyAccount.cshtml" />
-    <Content Include="Views\Task\Index.cshtml" />
-    <Content Include="Views\Task\Edit.cshtml" />
+    <Content Include="Views\Schedule\Index.cshtml" />
+    <Content Include="Views\Schedule\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -240,7 +240,6 @@
     <Folder Include="Controllers\Schedule\Teacher\" />
     <Folder Include="Models\Extended\" />
     <Folder Include="Models\User\Student\" />
-    <Folder Include="Views\Schedule\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EFOracle\EFOracle.csproj">

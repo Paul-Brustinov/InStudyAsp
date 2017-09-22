@@ -1,7 +1,6 @@
 var searchData=
 [
   ['task_2ecs',['TASK.cs',['../_t_a_s_k_8cs.html',1,'']]],
-  ['taskcontroller_2ecs',['TaskController.cs',['../_task_controller_8cs.html',1,'']]],
   ['tasktype_2ecs',['TASKTYPE.cs',['../_t_a_s_k_t_y_p_e_8cs.html',1,'']]],
   ['teacher_2ecs',['TEACHER.cs',['../_t_e_a_c_h_e_r_8cs.html',1,'']]],
   ['teacherlogin_2ecs',['TeacherLogin.cs',['../_teacher_login_8cs.html',1,'']]],

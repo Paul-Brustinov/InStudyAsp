@@ -2,7 +2,7 @@
 \label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule}\index{In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule@{In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule}}
 
 
-View\+Model for Task\+Controller.  
+View\+Model for Schedule\+Controller.  
 
 
 Inheritance diagram for In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule\+:\begin{figure}[H]
@@ -40,11 +40,24 @@ int \hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model
 string \hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a8263bc709f1e63fd8d4406f1ad2d9f6f}{Old\+ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Store json of unchanged S\+C\+H\+E\+D\+U\+LE. \end{DoxyCompactList}\item 
 string \hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a36455e485d079b033236de1c892adb8f}{S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+D\+A\+T\+E2}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em To prevent hand edit of main field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em To prevent hand edit of main field. \end{DoxyCompactList}\item 
+I\+Enumerable$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_d_i_s_c_i_p_l_i_n_e}{D\+I\+S\+C\+I\+P\+L\+I\+NE} $>$ \hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_ab78fd27cfd27e6f1be6c414acff93b41}{disciplines}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+I\+Enumerable$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_g_r_o_u_p}{G\+R\+O\+UP} $>$ \hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a51d1addd43459362469f427a00436f50}{groups}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_d_i_s_c_i_p_l_i_n_e}{D\+I\+S\+C\+I\+P\+L\+I\+NE} $>$ \hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_af83b9134a2fb82ac95d54bae3048b634}{repo\+Discipline}
+\item 
+\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_g_r_o_u_p}{G\+R\+O\+UP} $>$ \hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_ae6fcb15e9c68b57ded9300e873d5e1fc}{repo\+Group}
+\item 
+\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e}{S\+C\+H\+E\+D\+U\+LE} $>$ \hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a6c85660782fd7647ca942cc759988872}{repo\+Schedule}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-View\+Model for Task\+Controller. 
+View\+Model for Schedule\+Controller. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a2a6f9735138119885135e10599792ebc}\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a2a6f9735138119885135e10599792ebc}} 
@@ -109,9 +122,39 @@ Provide selection Discipline from Select\+List in View.
 
 Provide selection Group from Select\+List in View. 
 
+\mbox{\Hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_af83b9134a2fb82ac95d54bae3048b634}\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_af83b9134a2fb82ac95d54bae3048b634}} 
+\index{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}!repo\+Discipline@{repo\+Discipline}}
+\index{repo\+Discipline@{repo\+Discipline}!In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}}
+\subsubsection{\texorpdfstring{repo\+Discipline}{repoDiscipline}}
+{\footnotesize\ttfamily \hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$\hyperlink{class_e_f_oracle_1_1_model_1_1_d_i_s_c_i_p_l_i_n_e}{D\+I\+S\+C\+I\+P\+L\+I\+NE}$>$ In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule.\+repo\+Discipline\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_ae6fcb15e9c68b57ded9300e873d5e1fc}\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_ae6fcb15e9c68b57ded9300e873d5e1fc}} 
+\index{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}!repo\+Group@{repo\+Group}}
+\index{repo\+Group@{repo\+Group}!In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}}
+\subsubsection{\texorpdfstring{repo\+Group}{repoGroup}}
+{\footnotesize\ttfamily \hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$\hyperlink{class_e_f_oracle_1_1_model_1_1_g_r_o_u_p}{G\+R\+O\+UP}$>$ In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule.\+repo\+Group\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a6c85660782fd7647ca942cc759988872}\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a6c85660782fd7647ca942cc759988872}} 
+\index{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}!repo\+Schedule@{repo\+Schedule}}
+\index{repo\+Schedule@{repo\+Schedule}!In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}}
+\subsubsection{\texorpdfstring{repo\+Schedule}{repoSchedule}}
+{\footnotesize\ttfamily \hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$\hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e}{S\+C\+H\+E\+D\+U\+LE}$>$ In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule.\+repo\+Schedule\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 \subsection{Property Documentation}
+\mbox{\Hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_ab78fd27cfd27e6f1be6c414acff93b41}\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_ab78fd27cfd27e6f1be6c414acff93b41}} 
+\index{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}!disciplines@{disciplines}}
+\index{disciplines@{disciplines}!In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}}
+\subsubsection{\texorpdfstring{disciplines}{disciplines}}
+{\footnotesize\ttfamily I\+Enumerable$<$\hyperlink{class_e_f_oracle_1_1_model_1_1_d_i_s_c_i_p_l_i_n_e}{D\+I\+S\+C\+I\+P\+L\+I\+NE}$>$ In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule.\+disciplines\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a51d1addd43459362469f427a00436f50}\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a51d1addd43459362469f427a00436f50}} 
+\index{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}!groups@{groups}}
+\index{groups@{groups}!In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}}
+\subsubsection{\texorpdfstring{groups}{groups}}
+{\footnotesize\ttfamily I\+Enumerable$<$\hyperlink{class_e_f_oracle_1_1_model_1_1_g_r_o_u_p}{G\+R\+O\+UP}$>$ In\+Study\+Asp.\+Models.\+User.\+Teacher.\+View\+Model\+Schedule.\+groups\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
 \mbox{\Hypertarget{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a8263bc709f1e63fd8d4406f1ad2d9f6f}\label{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule_a8263bc709f1e63fd8d4406f1ad2d9f6f}} 
 \index{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}!Old\+ID@{Old\+ID}}
 \index{Old\+ID@{Old\+ID}!In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule@{In\+Study\+Asp\+::\+Models\+::\+User\+::\+Teacher\+::\+View\+Model\+Schedule}}

@@ -1,0 +1,83 @@
+.TH "Repo.Common.GenericRepository< T >" 3 "Fri Sep 22 2017" "InStudyAsp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Repo.Common.GenericRepository< T >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBRepo\&.Common\&.IGenericRepository< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGenericRepository\fP (DbContext context)"
+.br
+.ti -1c
+.RI "virtual IEnumerable< T > \fBGetAll\fP ()"
+.br
+.ti -1c
+.RI "IEnumerable< T > \fBFindBy\fP (System\&.Linq\&.Expressions\&.Expression< Func< T, bool >> predicate)"
+.br
+.ti -1c
+.RI "virtual T \fBGet\fP (int id)"
+.br
+.ti -1c
+.RI "virtual void \fBAddOrUpdate\fP (T entity)"
+.br
+.ti -1c
+.RI "virtual void \fBDelete\fP (T entity)"
+.br
+.ti -1c
+.RI "virtual void \fBSave\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "DbContext \fB_entities\fP"
+.br
+.ti -1c
+.RI "readonly IDbSet< T > \fB_dbset\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBRepo\&.Common\&.GenericRepository\fP< T >\&.\fBGenericRepository\fP (DbContext context)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void \fBRepo\&.Common\&.GenericRepository\fP< T >\&.AddOrUpdate (T entity)\fC [virtual]\fP"
+
+.PP
+Implements \fBRepo\&.Common\&.IGenericRepository< T >\fP\&.
+.SS "virtual void \fBRepo\&.Common\&.GenericRepository\fP< T >\&.Delete (T entity)\fC [virtual]\fP"
+
+.PP
+Implements \fBRepo\&.Common\&.IGenericRepository< T >\fP\&.
+.SS "IEnumerable<T> \fBRepo\&.Common\&.GenericRepository\fP< T >\&.FindBy (System\&.Linq\&.Expressions\&.Expression< Func< T, bool >> predicate)"
+
+.SS "virtual T \fBRepo\&.Common\&.GenericRepository\fP< T >\&.Get (int id)\fC [virtual]\fP"
+
+.PP
+Implements \fBRepo\&.Common\&.IGenericRepository< T >\fP\&.
+.SS "virtual IEnumerable<T> \fBRepo\&.Common\&.GenericRepository\fP< T >\&.GetAll ()\fC [virtual]\fP"
+
+.PP
+Implements \fBRepo\&.Common\&.IGenericRepository< T >\fP\&.
+.SS "virtual void \fBRepo\&.Common\&.GenericRepository\fP< T >\&.Save ()\fC [virtual]\fP"
+
+.PP
+Implements \fBRepo\&.Common\&.IGenericRepository< T >\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "readonly IDbSet<T> \fBRepo\&.Common\&.GenericRepository\fP< T >\&._dbset\fC [protected]\fP"
+
+.SS "DbContext \fBRepo\&.Common\&.GenericRepository\fP< T >\&._entities\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for InStudyAsp from the source code\&.

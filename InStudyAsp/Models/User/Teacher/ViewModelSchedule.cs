@@ -10,7 +10,7 @@ using Repo.Common;
 namespace InStudyAsp.Models.User.Teacher
 {
     /*************************************************************************************//**
-    * \brief  ViewModel for TaskController 
+    * \brief  ViewModel for ScheduleController 
     *****************************************************************************************/
     public class ViewModelSchedule : SCHEDULE
     {

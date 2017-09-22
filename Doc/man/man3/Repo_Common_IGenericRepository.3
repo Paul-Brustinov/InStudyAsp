@@ -1,0 +1,60 @@
+.TH "Repo.Common.IGenericRepository< T >" 3 "Fri Sep 22 2017" "InStudyAsp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Repo.Common.IGenericRepository< T >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBRepo\&.Common\&.GenericRepository< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "IEnumerable< T > \fBGetAll\fP ()"
+.br
+.ti -1c
+.RI "T \fBGet\fP (int Id)"
+.br
+.ti -1c
+.RI "IEnumerable< T > \fBFindBy\fP (Expression< Func< T, bool >> predicate)"
+.br
+.ti -1c
+.RI "void \fBAddOrUpdate\fP (T entity)"
+.br
+.ti -1c
+.RI "void \fBDelete\fP (T entity)"
+.br
+.ti -1c
+.RI "void \fBSave\fP ()"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "void \fBRepo\&.Common\&.IGenericRepository\fP< T >\&.AddOrUpdate (T entity)"
+
+.PP
+Implemented in \fBRepo\&.Common\&.GenericRepository< T >\fP\&.
+.SS "void \fBRepo\&.Common\&.IGenericRepository\fP< T >\&.Delete (T entity)"
+
+.PP
+Implemented in \fBRepo\&.Common\&.GenericRepository< T >\fP\&.
+.SS "IEnumerable<T> \fBRepo\&.Common\&.IGenericRepository\fP< T >\&.FindBy (Expression< Func< T, bool >> predicate)"
+
+.SS "T \fBRepo\&.Common\&.IGenericRepository\fP< T >\&.Get (int Id)"
+
+.PP
+Implemented in \fBRepo\&.Common\&.GenericRepository< T >\fP\&.
+.SS "IEnumerable<T> \fBRepo\&.Common\&.IGenericRepository\fP< T >\&.GetAll ()"
+
+.PP
+Implemented in \fBRepo\&.Common\&.GenericRepository< T >\fP\&.
+.SS "void \fBRepo\&.Common\&.IGenericRepository\fP< T >\&.Save ()"
+
+.PP
+Implemented in \fBRepo\&.Common\&.GenericRepository< T >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for InStudyAsp from the source code\&.

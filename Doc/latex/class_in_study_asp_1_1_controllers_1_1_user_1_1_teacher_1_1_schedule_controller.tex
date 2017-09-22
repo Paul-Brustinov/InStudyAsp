@@ -1,0 +1,145 @@
+\hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller}{}\section{In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Schedule\+Controller Class Reference}
+\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller}\index{In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Schedule\+Controller@{In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Schedule\+Controller}}
+Inheritance diagram for In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Schedule\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_aa5f4315593095a1c5065795fbf082a6c}{Schedule\+Controller} (\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_t_e_a_c_h_e_r}{T\+E\+A\+C\+H\+ER} $>$ \+\_\+teachers, \hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_g_r_o_u_p}{G\+R\+O\+UP} $>$ \+\_\+groups, \hyperlink{class_repo_1_1_schedule_repository}{Schedule\+Repository} \+\_\+schedules, \hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_d_i_s_c_i_p_l_i_n_e}{D\+I\+S\+C\+I\+P\+L\+I\+NE} $>$ \+\_\+disciplines)
+\begin{DoxyCompactList}\small\item\em C\+T\+OR for Ninject, and get current \hyperlink{namespace_in_study_asp_1_1_controllers_1_1_user_1_1_teacher}{Teacher} from System.\+Web.\+Http\+Context. \end{DoxyCompactList}\item 
+Action\+Result \hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a56b0d71c5c5639e0a9bd708a3535af6c}{Index} ()
+\begin{DoxyCompactList}\small\item\em Task returns List of Schedules for current user(teacher) \end{DoxyCompactList}\item 
+Action\+Result \hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_aeaefe8512d47c31ed3afea285cae647d}{New} ()
+\begin{DoxyCompactList}\small\item\em \begin{DoxyVerb}\end{DoxyVerb}
+ \end{DoxyCompactList}\item 
+Action\+Result \hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a8460ca79030e193cfb5367a0b51f6933}{Edit\+Post} (\hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule}{View\+Model\+Schedule} \+\_\+schedule)
+\begin{DoxyCompactList}\small\item\em Saving data from new or existing S\+C\+H\+E\+D\+U\+LE. \end{DoxyCompactList}\item 
+Action\+Result \hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a822c9455259b96a96ae333d25ca7bf1a}{Edit\+Get} ()
+\begin{DoxyCompactList}\small\item\em Geting page to Edit S\+C\+H\+E\+D\+U\+LE There is using P\+O\+ST request to pass multiple params for multiple columns Primary Key. \end{DoxyCompactList}\item 
+Action\+Result \hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_ad44fb1d37e6119aece41d3b71cb81ec8}{Delete} ()
+\begin{DoxyCompactList}\small\item\em Action to delete S\+C\+H\+E\+D\+U\+LE. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_t_e_a_c_h_e_r}{T\+E\+A\+C\+H\+ER} $>$ \hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a74c7bae1cf29eef4b2c4b10b919f7f3f}{teachers}
+\item 
+\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_g_r_o_u_p}{G\+R\+O\+UP} $>$ \hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_adca9d4990e412a7a5723c95b682fcba2}{groups}
+\item 
+\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e}{S\+C\+H\+E\+D\+U\+LE} $>$ \hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_aed008ef3307f7b8acecf751b084f9aad}{schedules}
+\item 
+\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_d_i_s_c_i_p_l_i_n_e}{D\+I\+S\+C\+I\+P\+L\+I\+NE} $>$ \hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a4102c2015fbace8b8213c9e3da2f72a8}{disciplines}
+\item 
+\hyperlink{class_e_f_oracle_1_1_model_1_1_t_e_a_c_h_e_r}{T\+E\+A\+C\+H\+ER} \hyperlink{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a38f4c4a18010275b1be2ac2b87e5fc9b}{teacher}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+contains C\+R\+UD actions for S\+C\+H\+E\+D\+U\+L\+ES 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_aa5f4315593095a1c5065795fbf082a6c}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_aa5f4315593095a1c5065795fbf082a6c}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}!Schedule\+Controller@{Schedule\+Controller}}
+\index{Schedule\+Controller@{Schedule\+Controller}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}}
+\subsubsection{\texorpdfstring{Schedule\+Controller()}{ScheduleController()}}
+{\footnotesize\ttfamily In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Schedule\+Controller.\+Schedule\+Controller (\begin{DoxyParamCaption}\item[{\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_t_e_a_c_h_e_r}{T\+E\+A\+C\+H\+ER} $>$}]{\+\_\+teachers,  }\item[{\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_g_r_o_u_p}{G\+R\+O\+UP} $>$}]{\+\_\+groups,  }\item[{\hyperlink{class_repo_1_1_schedule_repository}{Schedule\+Repository}}]{\+\_\+schedules,  }\item[{\hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$ \hyperlink{class_e_f_oracle_1_1_model_1_1_d_i_s_c_i_p_l_i_n_e}{D\+I\+S\+C\+I\+P\+L\+I\+NE} $>$}]{\+\_\+disciplines }\end{DoxyParamCaption})}
+
+
+
+C\+T\+OR for Ninject, and get current \hyperlink{namespace_in_study_asp_1_1_controllers_1_1_user_1_1_teacher}{Teacher} from System.\+Web.\+Http\+Context. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_ad44fb1d37e6119aece41d3b71cb81ec8}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_ad44fb1d37e6119aece41d3b71cb81ec8}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}!Delete@{Delete}}
+\index{Delete@{Delete}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}}
+\subsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily Action\+Result In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Schedule\+Controller.\+Delete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Action to delete S\+C\+H\+E\+D\+U\+LE. 
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a822c9455259b96a96ae333d25ca7bf1a}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a822c9455259b96a96ae333d25ca7bf1a}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}!Edit\+Get@{Edit\+Get}}
+\index{Edit\+Get@{Edit\+Get}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Get()}{EditGet()}}
+{\footnotesize\ttfamily Action\+Result In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Schedule\+Controller.\+Edit\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Geting page to Edit S\+C\+H\+E\+D\+U\+LE There is using P\+O\+ST request to pass multiple params for multiple columns Primary Key. 
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a8460ca79030e193cfb5367a0b51f6933}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a8460ca79030e193cfb5367a0b51f6933}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}!Edit\+Post@{Edit\+Post}}
+\index{Edit\+Post@{Edit\+Post}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Post()}{EditPost()}}
+{\footnotesize\ttfamily Action\+Result In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Schedule\+Controller.\+Edit\+Post (\begin{DoxyParamCaption}\item[{\hyperlink{class_in_study_asp_1_1_models_1_1_user_1_1_teacher_1_1_view_model_schedule}{View\+Model\+Schedule}}]{\+\_\+schedule }\end{DoxyParamCaption})}
+
+
+
+Saving data from new or existing S\+C\+H\+E\+D\+U\+LE. 
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a56b0d71c5c5639e0a9bd708a3535af6c}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a56b0d71c5c5639e0a9bd708a3535af6c}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}!Index@{Index}}
+\index{Index@{Index}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}}
+\subsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily Action\+Result In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Schedule\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Task returns List of Schedules for current user(teacher) 
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_aeaefe8512d47c31ed3afea285cae647d}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_aeaefe8512d47c31ed3afea285cae647d}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}!New@{New}}
+\index{New@{New}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}}
+\subsubsection{\texorpdfstring{New()}{New()}}
+{\footnotesize\ttfamily Action\+Result In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Schedule\+Controller.\+New (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\begin{DoxyVerb}\end{DoxyVerb}
+ 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a4102c2015fbace8b8213c9e3da2f72a8}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a4102c2015fbace8b8213c9e3da2f72a8}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}!disciplines@{disciplines}}
+\index{disciplines@{disciplines}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}}
+\subsubsection{\texorpdfstring{disciplines}{disciplines}}
+{\footnotesize\ttfamily \hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$\hyperlink{class_e_f_oracle_1_1_model_1_1_d_i_s_c_i_p_l_i_n_e}{D\+I\+S\+C\+I\+P\+L\+I\+NE}$>$ In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Schedule\+Controller.\+disciplines\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_adca9d4990e412a7a5723c95b682fcba2}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_adca9d4990e412a7a5723c95b682fcba2}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}!groups@{groups}}
+\index{groups@{groups}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}}
+\subsubsection{\texorpdfstring{groups}{groups}}
+{\footnotesize\ttfamily \hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$\hyperlink{class_e_f_oracle_1_1_model_1_1_g_r_o_u_p}{G\+R\+O\+UP}$>$ In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Schedule\+Controller.\+groups\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_aed008ef3307f7b8acecf751b084f9aad}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_aed008ef3307f7b8acecf751b084f9aad}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}!schedules@{schedules}}
+\index{schedules@{schedules}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}}
+\subsubsection{\texorpdfstring{schedules}{schedules}}
+{\footnotesize\ttfamily \hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$\hyperlink{class_e_f_oracle_1_1_model_1_1_s_c_h_e_d_u_l_e}{S\+C\+H\+E\+D\+U\+LE}$>$ In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Schedule\+Controller.\+schedules\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a38f4c4a18010275b1be2ac2b87e5fc9b}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a38f4c4a18010275b1be2ac2b87e5fc9b}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}!teacher@{teacher}}
+\index{teacher@{teacher}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}}
+\subsubsection{\texorpdfstring{teacher}{teacher}}
+{\footnotesize\ttfamily \hyperlink{class_e_f_oracle_1_1_model_1_1_t_e_a_c_h_e_r}{T\+E\+A\+C\+H\+ER} In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Schedule\+Controller.\+teacher\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a74c7bae1cf29eef4b2c4b10b919f7f3f}\label{class_in_study_asp_1_1_controllers_1_1_user_1_1_teacher_1_1_schedule_controller_a74c7bae1cf29eef4b2c4b10b919f7f3f}} 
+\index{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}!teachers@{teachers}}
+\index{teachers@{teachers}!In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller@{In\+Study\+Asp\+::\+Controllers\+::\+User\+::\+Teacher\+::\+Schedule\+Controller}}
+\subsubsection{\texorpdfstring{teachers}{teachers}}
+{\footnotesize\ttfamily \hyperlink{interface_repo_1_1_common_1_1_i_generic_repository}{I\+Generic\+Repository}$<$\hyperlink{class_e_f_oracle_1_1_model_1_1_t_e_a_c_h_e_r}{T\+E\+A\+C\+H\+ER}$>$ In\+Study\+Asp.\+Controllers.\+User.\+Teacher.\+Schedule\+Controller.\+teachers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+\_\+\+W\+O\+R\+K/\+\_\+\+S\+T\+E\+P/\+In\+Study\+Asp/\+In\+Study\+Asp/\+Controllers/\+User/\+Teacher/\hyperlink{_schedule_controller_8cs}{Schedule\+Controller.\+cs}\end{DoxyCompactItemize}
