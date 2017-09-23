@@ -26,8 +26,8 @@ namespace EFOracle.Model
         [Display(Name = "Discipline code")]
         public decimal DISCIPLINE_CODE { get; set; }
 
-        //[Display(Name = "Schedule date")]
-        //[DataType(DataType.DateTime)]
+        [Display(Name = "Schedule date")]
+        [DataType(DataType.DateTime)]
         //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy hh:mm}")]
         public DateTime SCHEDULE_DATE { get; set; }
 

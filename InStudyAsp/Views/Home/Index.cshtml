@@ -15,7 +15,9 @@
 <body>
 <div>
         @Html.Label(Model.Count().ToString())
-        <div>@HttpContext.Current.User.Identity.Name</div>
+    <div>@HttpContext.Current.User.Identity.Name</div>
+    <a href="~/Schedule">Schedule list</a>
+    
 </div>
 </body>
 </html>
